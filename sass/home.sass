@@ -1,0 +1,37 @@
+.page-home
+	background-image: url("resources/cubes_@2X")
+	background-color: $backgroundColor
+
+	.logoSection
+		padding: 1% 0
+
+	.CSlogo
+		margin: auto
+		display: block
+		width: 100%
+		max-width: 750px
+
+	.homeNav
+		margin: auto
+		width: 100%
+		max-width: 1000px
+		text-align: center
+		height: 135px
+
+		a
+			padding: 10px 0
+			border: 3px solid white
+			margin-right: 50px
+			text-decoration: none
+			color: white
+			font-size: 2em
+			display: inline-block
+			width: 250px
+			transition: background-color 0.35s, border 0.35s ease-in-out
+
+			&:last-child
+				margin-right: 0
+
+			&:hover
+				background-color: rgba(75,75,75,1)
+				border: 3px solid darken(rgba(75,75,75,1),30%)
