@@ -14,7 +14,7 @@
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700")
 
 // Necessary imports, feel free to explore and hack though :)
-@import reset, menu, footer
+@import reset, menu, footer, variables, home
 
 // Base variables
 $baseTypeFace: 'Open Sans', sans-serif
@@ -26,7 +26,9 @@ body
 	font: 62.5%/1.5 $baseTypeFace
 	font-weight: 600 
 	
-// Clearfix (to use, @extend %clearfix)
+footer
+	background-color: rgba(75,75,75,1)
+	// Clearfix (to use, @extend %clearfix)
 %clearfix
 	zoom: 1
 	&:before, &:after
