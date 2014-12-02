@@ -25,17 +25,29 @@ function adjustNav() {
 	}
 }
 
+//Function to resize the home page
+function homeSize(){
+	var viewportHeight = $(window).height() - 50;
+
+	if(viewportHeight <= 900 && viewportHeight >= 800){
+		$('.content-area').css('height', 900);
+		$('.content-area').css('padding-top', '3%');
+	}else if(viewportHeight <= 800){
+		$('.content-area').css('height', 900);
+		$('.content-area').css('padding-top', '0%');
+	}else{
+		$('.content-area').css('padding-top', '6.5%');
+		$('.content-area').css('height', viewportHeight);
+	}
+}
+
 // When the document loads, adjust the nav and add click handlers for the
 // mobile view of the menu.
 
 $(document).ready(function () {
 
 	adjustNav();
-
-	var viewportHeight = $(window).height() - 50;
-	console.log(viewportHeight);
-
-	$('.content-area').css('height', viewportHeight);
+	homeSize();
 
 	$(".menu-toggle").click(function (evt) {
 
@@ -49,4 +61,6 @@ $(document).ready(function () {
 $(window).resize(function () {
 
 	adjustNav();
+	homeSize();
 });
+
