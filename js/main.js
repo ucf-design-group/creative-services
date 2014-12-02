@@ -32,6 +32,11 @@ $(document).ready(function () {
 
 	adjustNav();
 
+	var viewportHeight = $(window).height() - 50;
+	console.log(viewportHeight);
+
+	$('.content-area').css('height', viewportHeight);
+
 	$(".menu-toggle").click(function (evt) {
 
 		$("nav.main-menu ul").slideToggle();
