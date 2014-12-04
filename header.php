@@ -28,6 +28,7 @@
 						<a href="#" class="menu-toggle">Menu</a>
 <!-- 						<?php get_search_form(); ?>
  -->					</div>
+ 					<img class="navLogo" src="<?php echo get_stylesheet_directory_uri(); ?>/resources/CSlogo.png" alt="Creative Services Logo">
 					<ul>
 <?php
 							$current_ID = $post->ID;
@@ -49,11 +50,11 @@
 						<li<?php echo $nav_li_class; ?>><a href="<?php echo $link; ?>"><?php echo $name; ?></a></li>
 <?php 							}
 							} ?>
-						<li>
-							<!-- <form method="get" id="searchform" class="searchform" action="http://localhost/wp/" role="search">
+						<!-- <li>
+							<form method="get" id="searchform" class="searchform" action="http://localhost/wp/" role="search">
 								<input type="search" class="field" name="s" value="" id="s" placeholder="Search &#133;" />
-							</form> -->
-						</li>
+							</form>
+						</li> -->
 					</ul>
 				</nav>
 			</header>
