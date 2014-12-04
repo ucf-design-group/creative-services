@@ -44,6 +44,38 @@ function homeSize(){
 	}
 }
 
+
+function selectionListener() {
+							    
+	checkedStr = '';
+
+	if (document.getElementById('graphics').checked) {
+		$('#allSection').addClass( "hidden" );
+		$('#webSection').addClass( "hidden" );
+		$('#productionSection').addClass( "hidden" );
+		$('#graphicSection').removeClass( "hidden" );
+	}
+
+	if (document.getElementById('web').checked) {
+		$('#allSection').addClass( "hidden" );
+		$('#graphicSection').addClass( "hidden" );
+		$('#productionSection').addClass( "hidden" );
+		$('#webSection').removeClass( "hidden" );
+	}
+	if (document.getElementById('productions').checked) {
+		$('#allSection').addClass( "hidden" );
+		$('#webSection').addClass( "hidden" );
+		$('#graphicSection').addClass( "hidden" );
+		$('#productionSection').removeClass( "hidden" );
+	}
+	if (document.getElementById('all').checked) {
+		$('#graphicSection').addClass( "hidden" );
+		$('#webSection').addClass( "hidden" );
+		$('#productionSection').addClass( "hidden" );
+		$('#allSection').removeClass( "hidden" );
+	}
+}
+
 // When the document loads, adjust the nav and add click handlers for the
 // mobile view of the menu.
 
