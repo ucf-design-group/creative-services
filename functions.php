@@ -89,7 +89,7 @@ function custom_post_types() {
 	'public' => true,
 	'hierarchical' => false,
 	'supports' => array('title', 'editor', 'thumbnail'),
-	'taxonomies' => array(),
+	'taxonomies' => array('category'),
 	'has_archive' => false
 	));
 }
