@@ -27,17 +27,20 @@ function adjustNav() {
 
 //Function to resize the home page
 function homeSize(){
-	var viewportHeight = $(window).height() - 50;
 
-	if(viewportHeight <= 900 && viewportHeight >= 800){
-		$('.content-area').css('height', 900);
-		$('.content-area').css('padding-top', '3%');
-	}else if(viewportHeight <= 800){
-		$('.content-area').css('height', 900);
-		$('.content-area').css('padding-top', '0%');
-	}else{
-		$('.content-area').css('padding-top', '6.5%');
-		$('.content-area').css('height', viewportHeight);
+	if(window.location.pathname == '/creative-services/'){
+		var viewportHeight = $(window).height() - 50;
+
+		if(viewportHeight <= 900 && viewportHeight >= 800){
+			$('.content-area').css('height', 900);
+			$('.content-area').css('padding-top', '3%');
+		}else if(viewportHeight <= 800){
+			$('.content-area').css('height', 900);
+			$('.content-area').css('padding-top', '0%');
+		}else{
+			$('.content-area').css('padding-top', '6.5%');
+			$('.content-area').css('height', viewportHeight);
+		}
 	}
 }
 
