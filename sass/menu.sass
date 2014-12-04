@@ -9,9 +9,74 @@ nav.main-menu
 	
 
 nav.main-menu.full
+	padding-bottom: 2.5%
 
 	ul
 		display: block
+		vertical-align: top
+		text-align: center
+		border: 3px solid white
+		border-radius: 4px
+		outline: 0
+		overflow: hidden
+		background: none
+		margin: 0 auto
+		width: 803px
+
+		li
+			display: inline-block
+			border-right: 3px solid white
+			width: 200px
+			margin-left: -3px
+
+			&:last-child
+				border-right: 0
+
+		a
+			color: white
+			font-size: 2em
+			display: inline-block
+			padding: 7.5px 0
+			position: relative
+			width: 100%
+			outline: 0
+			overflow:hidden
+			background: none
+			z-index: 1
+			cursor: pointer
+			transition:         0.08s ease-in
+			-o-transition:      0.08s ease-in
+			-ms-transition:     0.08s ease-in
+			-moz-transition:    0.08s ease-in
+			-webkit-transition: 0.08s ease-in
+
+		a:hover 
+			color: $backgroundColor
+
+		a:before 
+			content: ""
+			position: absolute
+			background: white
+			bottom: 0
+			left: 0
+			right: 0
+			top: 100%
+			z-index: -1
+			transition:         top 0.09s ease-in
+			-o-transition:      top 0.09s ease-in
+			-ms-transition:     top 0.09s ease-in
+			-moz-transition:    top 0.09s ease-in
+			-webkit-transition: top 0.09s ease-in
+
+		a:hover:before 
+			top: 0
+
+
+	.current
+		a
+			background: white
+			color: $backgroundColor
+
 	
 	.compact-menu
 		display: none
@@ -33,3 +98,14 @@ nav.main-menu.compact
 
 .screen-reader-text
 	display: none
+
+
+.navLogo
+	width: 450px
+	margin: 0 auto
+	display: block
+	padding-top: 0.5%
+
+body
+	background-image: url("resources/cubes_@2X")
+	background-color: $backgroundColor
