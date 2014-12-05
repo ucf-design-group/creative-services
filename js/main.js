@@ -50,29 +50,29 @@ function selectionListener() {
 	checkedStr = '';
 
 	if (document.getElementById('graphics').checked) {
-		$('#allSection').addClass( "hidden" );
-		$('#webSection').addClass( "hidden" );
-		$('#productionSection').addClass( "hidden" );
-		$('#graphicSection').removeClass( "hidden" );
+		$('#allSection').fadeOut("slow");
+		$('#webSection').fadeOut("slow");
+		$('#productionSection').fadeOut("slow");
+		$('#graphicSection').delay(600).fadeIn( "slow" );
 	}
 
 	if (document.getElementById('web').checked) {
-		$('#allSection').addClass( "hidden" );
-		$('#graphicSection').addClass( "hidden" );
-		$('#productionSection').addClass( "hidden" );
-		$('#webSection').removeClass( "hidden" );
+		$('#allSection').fadeOut("slow");
+		$('#graphicSection').fadeOut("slow");
+		$('#productionSection').fadeOut("slow");
+		$('#webSection').delay(600).fadeIn( "slow" );
 	}
 	if (document.getElementById('productions').checked) {
-		$('#allSection').addClass( "hidden" );
-		$('#webSection').addClass( "hidden" );
-		$('#graphicSection').addClass( "hidden" );
-		$('#productionSection').removeClass( "hidden" );
+		$('#allSection').fadeOut("slow");
+		$('#webSection').fadeOut("slow");
+		$('#graphicSection').fadeOut("slow");
+		$('#productionSection').delay(600).fadeIn( "slow" );
 	}
 	if (document.getElementById('all').checked) {
-		$('#graphicSection').addClass( "hidden" );
-		$('#webSection').addClass( "hidden" );
-		$('#productionSection').addClass( "hidden" );
-		$('#allSection').removeClass( "hidden" );
+		$('#graphicSection').fadeOut("slow");
+		$('#webSection').fadeOut("slow");
+		$('#productionSection').fadeOut("slow");
+		$('#allSection').delay(600).fadeIn( "slow" );
 	}
 }
 
