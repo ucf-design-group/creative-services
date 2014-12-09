@@ -1,1 +1,43 @@
 .page-work
+	.content-area
+		padding: 0 20px 2.5% 20px
+
+
+	/* clearfix */
+	.packery:after 
+		content: ' '
+		display: block
+		clear: both
+
+
+	.item, .grid-sizer 
+		width: 25%
+
+
+	.item 
+		height: 500px
+		float: left
+		cursor: pointer
+		border: 3px solid white
+		transition: display 0.3s ease-in-out
+		background-size: cover !important
+		background-repeat: no-repeat
+		background-position: center top
+
+	.item.w2
+		background-position: center center
+
+
+	.itemDescription
+		width: 100%
+		height: 100%
+		background-image: url("resources/cubes_@2XO")
+		opacity: 0
+		transition: opacity 0.2s ease-in-out
+
+		&:hover
+			opacity: 1
+
+
+	.w2  
+		width:  50% 
