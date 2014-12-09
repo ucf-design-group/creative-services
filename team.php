@@ -12,10 +12,10 @@ get_header(); ?>
 				</div>
 					<section class="creative-team">
 						<form action="post" name="positionSwap">
-							<input type="radio" name="position[]" value="Graphics" id="graphics" onclick="workSelectionListener();"/><label for="graphics">Graphics</label>
-							<input type="radio" name="position[]" value="Web" id="web" onclick="workSelectionListener();"/><label for="web">Web</label>
-							<input type="radio" name="position[]" value="Productions" id="productions" onclick="workSelectionListener();"/><label for="productions">Productions</label>
-							<input type="radio" name="position[]" value="All" id="all" checked="checked" onclick="workSelectionListener();"/><label for="all">All</label>
+							<input type="radio" name="position[]" value="Graphics" id="graphics" onclick="selectionListener();"/><label for="graphics">Graphics</label>
+							<input type="radio" name="position[]" value="Web" id="web" onclick="selectionListener();"/><label for="web">Web</label>
+							<input type="radio" name="position[]" value="Productions" id="productions" onclick="selectionListener();"/><label for="productions">Productions</label>
+							<input type="radio" name="position[]" value="All" id="all" checked="checked" onclick="selectionListener();"/><label for="all">All</label>
 						</form>
 						<div id="allSection">
 <?php
@@ -67,7 +67,7 @@ get_header(); ?>
 ?>							
 						<article class="creative">
 							<div class="creativeHeadshot"><?php echo $image ?></div>
-							<h3><?php echo $title;?></h3>
+							<h3><?php echo $title; ?></h3>
 <!-- 							<span>Email:</span><a class="email" href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a>
 							<span>Twitter:</span><a class="twitter" href="https://twitter.com/<?php echo $twitter; ?>">@<?php echo $twitter; ?></a>
 							<span>Behance:</span><a class="behance" href="<?php echo $behance; ?>">Behance</a>
