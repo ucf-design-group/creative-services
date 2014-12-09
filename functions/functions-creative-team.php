@@ -26,27 +26,19 @@ function creative_meta() {
 
 	// $position = get_post_meta($post->ID, 'creative-form-position', true) ? get_post_meta($post->ID, 'creative-form-position', true) : '';
 	$email = get_post_meta($post->ID, 'creative-form-email', true) ? get_post_meta($post->ID, 'creative-form-email', true) : '';
-	$order = get_post_meta($post->ID, 'creative-form-order', true) ? get_post_meta($post->ID, 'creative-form-order', true) : '';
 	$twitter = get_post_meta($post->ID, 'creative-form-twitter', true) ? get_post_meta($post->ID, 'creative-form-twitter', true) : '';
 	$behance = get_post_meta($post->ID, 'creative-form-behance', true) ? get_post_meta($post->ID, 'creative-form-behance', true) : '';
 	$vimeo = get_post_meta($post->ID, 'creative-form-vimeo', true) ? get_post_meta($post->ID, 'creative-form-vimeo', true) : '';
 	$git = get_post_meta($post->ID, 'creative-form-git', true) ? get_post_meta($post->ID, 'creative-form-git', true) : '';
+	$personal = get_post_meta($post->ID, 'creative-form-personal', true) ? get_post_meta($post->ID, 'creative-form-personal', true) : '';
 
 	?>
-	<style type="text/css">#creative-form-position{width: 200px;}#creative-form-email{width: 200px;}#creative-form-order{width: 50px;}#creative-form div{display:inline-block; padding:0 5px;}</style>
+	<style type="text/css">#creative-form-position{width: 200px;}#creative-form-email{width: 200px;}#creative-form div{display:inline-block; padding:0 5px;}#creative-form-email, #creative-form-twitter, #creative-form-behance, #creative-form-vimeo, #creative-form-git, #creative-form-personal{display: block;}</style>
 	<div id="creative-form">
 <!-- 		<div>
 			<label for="creative-form-position">Position:</label>
 			<input type="text" name="creative-form-position" id="creative-form-position" value="<?php echo $position; ?>" />
 		</div> -->
-		<div>
-			<label for="creative-form-email">E-Mail:</label>
-			<input type="text" name="creative-form-email" id="creative-form-email" value="<?php echo $email; ?>" />
-		</div>
-		<div>
-			<label for="creative-form-order">Order on Page:</label>
-			<input type="text" name="creative-form-order" id="creative-form-order" value="<?php echo $order; ?>" />
-		</div>
 		<div>
 			<label for="creative-form-twitter">Twitter Handle:</label>
 			<input type="text" name="creative-form-twitter" id="creative-form-twitter" value="<?php echo $twitter; ?>" />
@@ -60,8 +52,12 @@ function creative_meta() {
 			<input type="text" name="creative-form-vimeo" id="creative-form-vimeo" value="<?php echo $vimeo; ?>" />
 		</div>
 		<div>
-			<label for="creative-form-git">GIT URL:</label>
+			<label for="creative-form-git">Git URL:</label>
 			<input type="text" name="creative-form-git" id="creative-form-git" value="<?php echo $git; ?>" />
+		</div>
+		<div>
+			<label for="creative-form-personal">Personal URL:</label>
+			<input type="text" name="creative-form-personal" id="creative-form-personal" value="<?php echo $personal; ?>" />
 		</div>
 	</div>
 	<?php
@@ -86,14 +82,11 @@ function creative_meta_save() {
 	$input = array();
 
 	// $input['position'] = (isset($_POST['creative-form-position']) ? $_POST['creative-form-position'] : '');
-	$input['email'] = (isset($_POST['creative-form-email']) ? $_POST['creative-form-email'] : '');
-	$input['order'] = (isset($_POST['creative-form-order']) ? $_POST['creative-form-order'] : '');
 	$input['twitter'] = (isset($_POST['creative-form-twitter']) ? $_POST['creative-form-twitter'] : '');
 	$input['behance'] = (isset($_POST['creative-form-behance']) ? $_POST['creative-form-behance'] : '');
 	$input['vimeo'] = (isset($_POST['creative-form-vimeo']) ? $_POST['creative-form-vimeo'] : '');
 	$input['git'] = (isset($_POST['creative-form-git']) ? $_POST['creative-form-git'] : '');
-
-	$input['order'] = str_pad($input['order'], 3, "0", STR_PAD_LEFT);
+	$input['personal'] = (isset($_POST['creative-form-personal']) ? $_POST['creative-form-personal'] : '');
 
 	foreach ($input as $field => $value) {
 
