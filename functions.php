@@ -88,7 +88,18 @@ function custom_post_types() {
 		'singular_name' => 'Creative'),
 	'public' => true,
 	'hierarchical' => false,
-	'supports' => array('title', 'editor', 'thumbnail'),
+	'supports' => array('title', 'thumbnail'),
+	'taxonomies' => array('category'),
+	'has_archive' => false
+	));
+
+	register_post_type('portfolio', array(
+	'labels' => array(
+		'name' => 'Portfolio',
+		'singular_name' => 'Piece'),
+	'public' => true,
+	'hierarchical' => false,
+	'supports' => array('title', 'thumbnail'),
 	'taxonomies' => array('category'),
 	'has_archive' => false
 	));
@@ -124,5 +135,6 @@ function cpt_icons() {
 
 include_once("functions/functions-nav.php");
 include_once("functions/functions-creative-team.php");
+include_once("functions/functions-portfolio.php");
 
 ?>
