@@ -12,14 +12,14 @@ get_header(); ?>
 				</div>
 					<section class="creative-team">
 						<form action="post" name="positionSwap">
-							<input type="radio" name="position[]" value="Graphics" id="graphics" onclick="selectionListener();"/><label for="graphics">Graphics</label>
-							<input type="radio" name="position[]" value="Web" id="web" onclick="selectionListener();"/><label for="web">Web</label>
-							<input type="radio" name="position[]" value="Productions" id="productions" onclick="selectionListener();"/><label for="productions">Productions</label>
-							<input type="radio" name="position[]" value="All" id="all" checked="checked" onclick="selectionListener();"/><label for="all">All</label>
+							<input type="radio" name="position[]" value="Graphics" id="graphics" onclick="workSelectionListener();"/><label for="graphics">Graphics</label>
+							<input type="radio" name="position[]" value="Web" id="web" onclick="workSelectionListener();"/><label for="web">Web</label>
+							<input type="radio" name="position[]" value="Productions" id="productions" onclick="workSelectionListener();"/><label for="productions">Productions</label>
+							<input type="radio" name="position[]" value="All" id="all" checked="checked" onclick="workSelectionListener();"/><label for="all">All</label>
 						</form>
 						<div id="allSection">
 <?php
-						$creativeLoop = new WP_QUERY(array('post_type' => 'creative-team', 'posts_per_page' => -1, 'orderby' =>'meta_value', 'order' => 'DSC', 'meta_key' => 'creative-form-order'));
+						$creativeLoop = new WP_QUERY(array('post_type' => 'creative-team', 'posts_per_page' => -1, 'orderby' =>'meta_value', 'order' => 'ASC'));
 						while ($creativeLoop->have_posts()) {
 							$creativeLoop->the_post();
 							$title = get_the_title();
@@ -50,7 +50,7 @@ get_header(); ?>
 <?php
 //Grab Others
 
-						$creativeLoop = new WP_QUERY(array('post_type' => 'creative-team', 'posts_per_page' => -1, 'orderby' =>'meta_value', 'order' => 'DSC', 'meta_key' => 'creative-form-order', 'category_name' => 'Graphic Designer'));
+						$creativeLoop = new WP_QUERY(array('post_type' => 'creative-team', 'posts_per_page' => -1, 'orderby' =>'meta_value', 'order' => 'ASC', 'category_name' => 'Graphic'));
 						while ($creativeLoop->have_posts()) {
 							$creativeLoop->the_post();
 							$title = get_the_title();
@@ -67,7 +67,7 @@ get_header(); ?>
 ?>							
 						<article class="creative">
 							<div class="creativeHeadshot"><?php echo $image ?></div>
-							<h3><?php echo $title; ?></h3>
+							<h3><?php echo $title;?></h3>
 <!-- 							<span>Email:</span><a class="email" href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a>
 							<span>Twitter:</span><a class="twitter" href="https://twitter.com/<?php echo $twitter; ?>">@<?php echo $twitter; ?></a>
 							<span>Behance:</span><a class="behance" href="<?php echo $behance; ?>">Behance</a>
@@ -80,7 +80,7 @@ get_header(); ?>
 						<div id="webSection" class="hidden">
 <?php
 
-					$creativeLoop = new WP_QUERY(array('post_type' => 'creative-team', 'posts_per_page' => -1, 'orderby' =>'meta_value', 'order' => 'DSC', 'meta_key' => 'creative-form-order', 'category_name' => 'Web Designer'));
+					$creativeLoop = new WP_QUERY(array('post_type' => 'creative-team', 'posts_per_page' => -1, 'orderby' =>'meta_value', 'order' => 'ASC', 'category_name' => 'Web'));
 						while ($creativeLoop->have_posts()) {
 							$creativeLoop->the_post();
 							$title = get_the_title();
@@ -110,7 +110,7 @@ get_header(); ?>
 						<div id="productionSection" class="hidden">
 <?php
 
-					$creativeLoop = new WP_QUERY(array('post_type' => 'creative-team', 'posts_per_page' => -1, 'orderby' =>'meta_value', 'order' => 'DSC', 'meta_key' => 'creative-form-order', 'category_name' => 'Production Director'));
+					$creativeLoop = new WP_QUERY(array('post_type' => 'creative-team', 'posts_per_page' => -1, 'orderby' =>'meta_value', 'order' => 'ASC', 'category_name' => 'Video'));
 						while ($creativeLoop->have_posts()) {
 							$creativeLoop->the_post();
 							$title = get_the_title();
