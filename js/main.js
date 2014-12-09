@@ -76,6 +76,39 @@ function selectionListener() {
 	}
 }
 
+
+// function workSelectionListener() {
+							    
+// 	checkedStr = '';
+
+// 	if (document.getElementById('work_graphics').checked) {
+// 		console.log('graphic');
+// 		$('.Graphic').fadeOut("slow");
+// 		$('.Video').fadeOut("slow");
+// 		$('.Web').fadeOut("slow");
+// 		$('.Graphic').delay(600).fadeIn( "slow" );
+// 	}
+
+// 	if (document.getElementById('work_web').checked) {
+// 		$('#allSection').fadeOut("slow");
+// 		$('#graphicSection').fadeOut("slow");
+// 		$('#productionSection').fadeOut("slow");
+// 		$('#webSection').delay(600).fadeIn( "slow" );
+// 	}
+// 	if (document.getElementById('work_productions').checked) {
+// 		$('#allSection').fadeOut("slow");
+// 		$('#webSection').fadeOut("slow");
+// 		$('#graphicSection').fadeOut("slow");
+// 		$('#productionSection').delay(600).fadeIn( "slow" );
+// 	}
+// 	if (document.getElementById('work_all').checked) {
+// 		$('#graphicSection').fadeOut("slow");
+// 		$('#webSection').fadeOut("slow");
+// 		$('#productionSection').fadeOut("slow");
+// 		$('#allSection').delay(600).fadeIn( "slow" );
+// 	}
+// }
+
 // When the document loads, adjust the nav and add click handlers for the
 // mobile view of the menu.
 
@@ -84,11 +117,24 @@ $(document).ready(function () {
 	adjustNav();
 	homeSize();
 
+	//Packery
+	var container = document.querySelector('#container');
+	var myPackery = new Packery( container, {
+	  // options...
+	});
+
 	$(".menu-toggle").click(function (evt) {
 
 		$("nav.main-menu ul").slideToggle();
 		evt.preventDefault();
-	})
+	});
+
+	$(".itemDescription").click(function(data, handler){
+	  if (data.target == this) {
+	   console.log('clicked');
+	  }
+	});
+
 });
 
 
@@ -98,4 +144,3 @@ $(window).resize(function () {
 	adjustNav();
 	homeSize();
 });
-
