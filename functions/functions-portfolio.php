@@ -30,9 +30,10 @@ function portfolio_meta() {
 	$port_vimeo = get_post_meta($post->ID, 'portfolio-form-vimeo', true) ? get_post_meta($post->ID, 'portfolio-form-vimeo', true) : '';
 	$port_git = get_post_meta($post->ID, 'portfolio-form-git', true) ? get_post_meta($post->ID, 'portfolio-form-git', true) : '';
 	$port_personal = get_post_meta($post->ID, 'portfolio-form-personal', true) ? get_post_meta($post->ID, 'portfolio-form-personal', true) : '';
+	$port_instagram = get_post_meta($post->ID, 'portfolio-form-personal', true) ? get_post_meta($post->ID, 'portfolio-form-personal', true) : '';
 
 	?>
-	<style type="text/css">#portfolio-form-name{width: 200px;}#portfolio-form div{display:inline-block; padding:0 5px;} #portfolio-form-name, #portfolio-form-twitter, #portfolio-form-behance, #portfolio-form-vimeo, #portfolio-form-git, #portfolio-form-personal{display: block;}</style>
+	<style type="text/css">#portfolio-form-name{width: 200px;}#portfolio-form div{display:inline-block; padding:0 5px;} #portfolio-form-name, #portfolio-form-twitter, #portfolio-form-instagram, #portfolio-form-behance, #portfolio-form-vimeo, #portfolio-form-git, #portfolio-form-personal{display: block; width:180px;}</style>
 	<div id="portfolio-form">
 		<div>
 			<label for="portfolio-form-name">Creator's Name:</label>
@@ -41,6 +42,10 @@ function portfolio_meta() {
 		<div>
 			<label for="portfolio-form-twitter">Twitter Handle:</label>
 			<input type="text" name="portfolio-form-twitter" id="portfolio-form-twitter" value="<?php echo $port_twitter; ?>" />
+		</div>
+		<div>
+			<label for="portfolio-form-instagram">Instagram URL:</label>
+			<input type="text" name="portfolio-form-instagram" id="portfolio-form-instagram" value="<?php echo $port_instagram; ?>" />
 		</div>
 		<div>
 			<label for="portfolio-form-behance">Behance URL:</label>
@@ -87,6 +92,7 @@ function portfolio_meta_save() {
 	$input['vimeo'] = (isset($_POST['portfolio-form-vimeo']) ? $_POST['portfolio-form-vimeo'] : '');
 	$input['git'] = (isset($_POST['portfolio-form-git']) ? $_POST['portfolio-form-git'] : '');
 	$input['personal'] = (isset($_POST['portfolio-form-personal']) ? $_POST['portfolio-form-personal'] : '');
+	$input['instagram'] = (isset($_POST['portfolio-form-instagram']) ? $_POST['portfolio-form-instagram'] : '');
 
 	// $input['order'] = str_pad($input['order'], 3, "0", STR_PAD_LEFT);
 
