@@ -1,13 +1,44 @@
 .page-team
 
 	.creative-team
-		width: 1280px
+		max-width: 1280px
+		width: 100%
 		margin: 0 auto
 		padding: 10px 10px 3% 10px
-	.creative
-		display: inline-block
+
+
+	.content-area
+		padding: 0 100px 4% 100px
+
+	.isotope
+		margin-top: 1%
+		width: 100%
+
+
+	/* clearfix */
+	.isotope:after 
+		content: ' '
+		display: block
+		clear: both
+
+	.item 
+		width: 33%
+		height: 310px
+		padding-top: 2%
+		float: left
+		cursor: pointer
 		text-align: center
-		padding: 2em 3em 5em 3em
+		border-radius: 4px
+
+	.width2
+		height: 500px
+
+
+
+	// .creative
+	// 	display: inline-block
+	// 	text-align: center
+	// 	padding: 2em 3em 5em 3em
 
 		h3
 			font-size: 2em
@@ -16,8 +47,8 @@
 
 	.creativeHeadshot
 		img
-			border-radius: 50%
-			padding: 0.35em
+			border-radius: 4px
+			padding: 0.25em
 			background-color: white
 			height: 250px
 			width: 250px
@@ -32,13 +63,17 @@
 		height: 20px
 		width: 20px
 		border: 1px solid white
-		border-radius: 50%
+		border-radius: 4px
 		box-sizing: border-box
 		box-shadow: 0 1px 0 #eeecec
 		outline: none
 		cursor: pointer
 		transition-duration: .25s
-		transition-property: background-color, box-shadow
+		transition-property: background-color
+
+		&:hover
+			background-color: lighten(rgba(90,119,170,1),20%)
+
 
 		&:active, &:checked
 			background-color: white
