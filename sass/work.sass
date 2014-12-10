@@ -1,20 +1,19 @@
 .page-work
 	.content-area
-		padding: 0 20px 2.5% 20px
+		padding: 0 100px 4% 100px
+
+	.isotope
+		width: 100%
 
 
 	/* clearfix */
-	.packery:after 
+	.isotope:after 
 		content: ' '
 		display: block
 		clear: both
 
-
-	.item, .grid-sizer 
-		width: 25%
-
-
 	.item 
+		width: 25%
 		height: 500px
 		float: left
 		cursor: pointer
@@ -24,7 +23,7 @@
 		background-repeat: no-repeat
 		background-position: center top
 
-	.item.w2
+	.item.width2
 		background-position: center center
 
 
@@ -33,11 +32,77 @@
 		height: 100%
 		background-image: url("resources/cubes_@2XO")
 		opacity: 0
-		transition: opacity 0.2s ease-in-out
+		transition: opacity 0.3s ease-in-out
 
 		&:hover
 			opacity: 1
 
+		h1
+			position: relative
+			top: 32.5%
+			color: white
+			font-size: 3.8em
+			text-align: center
+			vertical-align: middle
+			font-weight: 300
+			font-family: gotham
 
-	.w2  
+	.itemIcons
+		position: relative
+		top: 32.5%
+		width: 50%
+		margin: 0 auto
+		text-align: center
+
+		a
+			color: white
+			font-size: 4em
+			transition: color 0.2s ease-in-out
+			display: inline-block
+			margin: 0 5%
+
+
+			&:hover
+				color: rgba(38,43,49,1)
+
+
+	.width2  
 		width:  50% 
+
+
+	label, input
+		cursor: pointer
+
+	input
+		-webkit-appearance: none
+		height: 20px
+		width: 20px
+		border: 1px solid white
+		border-radius: 4px
+		box-sizing: border-box
+		box-shadow: 0 1px 0 #eeecec
+		outline: none
+		cursor: pointer
+		transition-duration: .25s
+		transition-property: background-color
+
+		&:hover
+			background-color: lighten(rgba(90,119,170,1),20%)
+
+
+		&:active, &:checked
+			background-color: white
+
+	label
+		font-size: 1.75em
+		font-weight: 300
+		color: white
+		vertical-align: top
+		margin-right: 0.5em
+
+		&:last-child
+			margin-right: 0
+
+	form
+		text-align: right
+		margin-bottom: 1%
