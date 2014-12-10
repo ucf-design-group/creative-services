@@ -17,8 +17,17 @@
 		</footer>
 		
 		<?php wp_footer(); ?>
-
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		
+
+		<?php if(is_page('work') || is_page('team')){
+			//Only add plugins on specificed 'work' / 'team' pages.
+			?>
+			<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/isotope.js"></script>
+			<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/packery.js"></script>
+			<?php
+		} ?>
+
 		<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/main.js"></script>
 	</body>
 </html>
