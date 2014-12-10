@@ -9,16 +9,15 @@ get_header(); ?>
 						get_template_part( 'content', 'single' );
 					} ?>
 				</div>
-				<form action="post" name="workSwap">
-							<input type="radio" name="position[]" value="Graphics" id="work_graphics" onclick="workSelectionListener();"/><label for="work_graphics">Graphics</label>
-							<input type="radio" name="position[]" value="Web" id="work_web" onclick="workSelectionListener();"/><label for="work_web">Web</label>
-							<input type="radio" name="position[]" value="Productions" id="work_productions" onclick="workSelectionListener();"/><label for="work_productions">Productions</label>
-							<input type="radio" name="position[]" value="All" id="work_all" checked="checked" onclick="workSelectionListener();"/><label for="work_all">All</label>
-						</form>
-				<div class="packery js-packery" data-packery-options='{ "columnWidth": ".grid-sizer", "itemSelector": ".item" }'>
-				<div class="grid-sizer"></div>
+				<form action="post" name="positionSwap">
+					<input type="radio" name="position[]" value="Graphics" id="graphics" onclick="selectionListener();"/><label for="graphics">Graphics</label>
+					<input type="radio" name="position[]" value="Web" id="web" onclick="selectionListener();"/><label for="web">Web</label>
+					<input type="radio" name="position[]" value="Productions" id="productions" onclick="selectionListener();"/><label for="productions">Productions</label>
+					<input type="radio" name="position[]" value="All" id="all" checked="checked" onclick="selectionListener();"/><label for="all">All</label>
+				</form>
+				<div class="isotope">
 <?php
-						$creativeLoop = new WP_QUERY(array('post_type' => 'portfolio', 'posts_per_page' => -1, 'orderby' =>'rand', 'order' => 'DSC'));
+						$creativeLoop = new WP_QUERY(array('post_type' => 'portfolio', 'posts_per_page' => -1, 'orderby' =>'rand'/*meta_key*/, 'order' => 'DSC'));
 						while ($creativeLoop->have_posts()) {
 							$creativeLoop->the_post();
 							$title = get_the_title();
@@ -30,11 +29,46 @@ get_header(); ?>
 							$behance = get_post_meta($post->ID, 'portfolio-form-behance', true);
 							$vimeo = get_post_meta($post->ID, 'portfolio-form-vimeo', true);
 							$git = get_post_meta($post->ID, 'portfolio-form-git', true);
+							$personal = get_post_meta($post->ID, 'portfolio-form-personal', true);
+							$instagram = get_post_meta($post->ID, 'portfolio-form-instagram', true);
 
-?>							<div class="item <?php if($category){ if($category[0]->cat_name == 'Video'){ echo 'w2'; } } ?> <?php if($category){ echo $category[0]->cat_name; } ?>" style="background-image: url('<?php echo $image_url[0]; ?>');">
+?>							<div class="item <?php if($category){ if($category[0]->cat_name == 'Video'){ echo 'width2'; } } ?> <?php if($category){ echo $category[0]->cat_name; } ?>" style="background-image: url('<?php echo $image_url[0]; ?>');">
 								<div class="itemDescription">
 									<h1><?php echo $name; ?></h1>
-									<a href="">Fake LINK!</a>
+									<div class="itemIcons">
+										<?php 
+										if($twitter){
+											?>
+											<a id="twitterIcon" target="_blank" href="https://twitter.com/<?php echo $twitter ?>"><i class="fa fa-twitter"></i></a>
+											<?php
+										}
+										if($instagram){
+											?>
+											<a id="twitterIcon" target="_blank" href="<?php echo $instagram ?>"><i class="fa fa-instagram"></i></a>
+											<?php
+										}
+										if($behance){
+											?>
+											<a id="behanceIcon" target="_blank" href="<?php echo $behance ?>"><i class="fa fa-behance"></i></a>
+											<?php
+										}
+										if($vimeo){
+											?>
+											<a id="vimeoIcon" target="_blank" href="<?php echo $vimeo ?>"><i class="fa fa-vimeo-square"></i></a>
+											<?php
+										}
+										if($git){
+											?>
+											<a id="gitIcon" target="_blank" href="<?php echo $git ?>"><i class="fa fa-github"></i></a>
+											<?php
+										}
+										if($personal){
+											?>
+											<a id="personalIcon" target="_blank" href="<?php echo $personal ?>"><i class="fa fa-user"></i></a>
+											<?php
+										}
+										?>
+									</div>
 								</div>
 							</div>
 
@@ -42,7 +76,5 @@ get_header(); ?>
 ?>
 				</div>
 			</div>
-
-			<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/packery.js"></script>
 
 <?php get_footer(); ?>
