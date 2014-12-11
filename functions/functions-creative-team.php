@@ -26,6 +26,8 @@ function creative_meta() {
 
 	// $position = get_post_meta($post->ID, 'creative-form-position', true) ? get_post_meta($post->ID, 'creative-form-position', true) : '';
 	$email = get_post_meta($post->ID, 'creative-form-email', true) ? get_post_meta($post->ID, 'creative-form-email', true) : '';
+	$instagram = get_post_meta($post->ID, 'creative-form-email', true) ? get_post_meta($post->ID, 'creative-form-email', true) : '';
+	$linkedin = get_post_meta($post->ID, 'creative-form-email', true) ? get_post_meta($post->ID, 'creative-form-email', true) : '';
 	$twitter = get_post_meta($post->ID, 'creative-form-twitter', true) ? get_post_meta($post->ID, 'creative-form-twitter', true) : '';
 	$behance = get_post_meta($post->ID, 'creative-form-behance', true) ? get_post_meta($post->ID, 'creative-form-behance', true) : '';
 	$vimeo = get_post_meta($post->ID, 'creative-form-vimeo', true) ? get_post_meta($post->ID, 'creative-form-vimeo', true) : '';
@@ -33,19 +35,31 @@ function creative_meta() {
 	$personal = get_post_meta($post->ID, 'creative-form-personal', true) ? get_post_meta($post->ID, 'creative-form-personal', true) : '';
 
 	?>
-	<style type="text/css">#creative-form-position{width: 200px;}#creative-form-email{width: 200px;}#creative-form div{display:inline-block; padding:0 5px;}#creative-form-email, #creative-form-twitter, #creative-form-behance, #creative-form-vimeo, #creative-form-git, #creative-form-personal{display: block;}</style>
+	<style type="text/css">#creative-form div{display:inline-block; padding:0 5px;}#creative-form-email,#creative-form-instagram,#creative-form-linkedin, #creative-form-twitter, #creative-form-behance, #creative-form-vimeo, #creative-form-git, #creative-form-personal{display: block; width:150px;}</style>
 	<div id="creative-form">
 <!-- 		<div>
 			<label for="creative-form-position">Position:</label>
 			<input type="text" name="creative-form-position" id="creative-form-position" value="<?php echo $position; ?>" />
 		</div> -->
 		<div>
+			<label for="creative-form-email">Email Address:</label>
+			<input type="text" name="creative-form-email" id="creative-form-email" value="<?php echo $email; ?>" />
+		</div>
+		<div>
 			<label for="creative-form-twitter">Twitter Handle:</label>
 			<input type="text" name="creative-form-twitter" id="creative-form-twitter" value="<?php echo $twitter; ?>" />
 		</div>
 		<div>
+			<label for="creative-form-instagram">Instagram Handle:</label>
+			<input type="text" name="creative-form-instagram" id="creative-form-instagram" value="<?php echo $instagram; ?>" />
+		</div>
+		<div>
 			<label for="creative-form-behance">Behance URL:</label>
 			<input type="text" name="creative-form-behance" id="creative-form-behance" value="<?php echo $behance; ?>" />
+		</div>
+		<div>
+			<label for="creative-form-linkedin">LinkedIn URL:</label>
+			<input type="text" name="creative-form-linkedin" id="creative-form-linkedin" value="<?php echo $linkedin; ?>" />
 		</div>
 		<div>
 			<label for="creative-form-vimeo">Vimeo URL:</label>
@@ -83,6 +97,9 @@ function creative_meta_save() {
 
 	// $input['position'] = (isset($_POST['creative-form-position']) ? $_POST['creative-form-position'] : '');
 	$input['twitter'] = (isset($_POST['creative-form-twitter']) ? $_POST['creative-form-twitter'] : '');
+	$input['email'] = (isset($_POST['creative-form-email']) ? $_POST['creative-form-email'] : '');
+	$input['linkedin'] = (isset($_POST['creative-form-linkedin']) ? $_POST['creative-form-linkedin'] : '');
+	$input['instagram'] = (isset($_POST['creative-form-instagram']) ? $_POST['creative-form-instagram'] : '');
 	$input['behance'] = (isset($_POST['creative-form-behance']) ? $_POST['creative-form-behance'] : '');
 	$input['vimeo'] = (isset($_POST['creative-form-vimeo']) ? $_POST['creative-form-vimeo'] : '');
 	$input['git'] = (isset($_POST['creative-form-git']) ? $_POST['creative-form-git'] : '');

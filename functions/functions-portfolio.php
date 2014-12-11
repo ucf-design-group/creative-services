@@ -25,19 +25,25 @@ function portfolio_meta() {
 	wp_nonce_field(basename( __FILE__ ), 'portfolio-form-nonce' );
 
 	$port_name = get_post_meta($post->ID, 'portfolio-form-name', true) ? get_post_meta($post->ID, 'portfolio-form-name', true) : '';
+	$port_email = get_post_meta($post->ID, 'portfolio-form-email', true) ? get_post_meta($post->ID, 'portfolio-form-email', true) : '';
 	$port_twitter = get_post_meta($post->ID, 'portfolio-form-twitter', true) ? get_post_meta($post->ID, 'portfolio-form-twitter', true) : '';
 	$port_behance = get_post_meta($post->ID, 'portfolio-form-behance', true) ? get_post_meta($post->ID, 'portfolio-form-behance', true) : '';
 	$port_vimeo = get_post_meta($post->ID, 'portfolio-form-vimeo', true) ? get_post_meta($post->ID, 'portfolio-form-vimeo', true) : '';
 	$port_git = get_post_meta($post->ID, 'portfolio-form-git', true) ? get_post_meta($post->ID, 'portfolio-form-git', true) : '';
 	$port_personal = get_post_meta($post->ID, 'portfolio-form-personal', true) ? get_post_meta($post->ID, 'portfolio-form-personal', true) : '';
-	$port_instagram = get_post_meta($post->ID, 'portfolio-form-personal', true) ? get_post_meta($post->ID, 'portfolio-form-personal', true) : '';
+	$port_instagram = get_post_meta($post->ID, 'portfolio-form-instagram', true) ? get_post_meta($post->ID, 'portfolio-form-instagram', true) : '';
+	$port_linkedin = get_post_meta($post->ID, 'portfolio-form-linkedin', true) ? get_post_meta($post->ID, 'portfolio-form-linkedin', true) : '';
 
 	?>
-	<style type="text/css">#portfolio-form-name{width: 200px;}#portfolio-form div{display:inline-block; padding:0 5px;} #portfolio-form-name, #portfolio-form-twitter, #portfolio-form-instagram, #portfolio-form-behance, #portfolio-form-vimeo, #portfolio-form-git, #portfolio-form-personal{display: block; width:180px;}</style>
+	<style type="text/css">#portfolio-form div{display:inline-block; padding:0 5px;} #portfolio-form-name, #portfolio-form-twitter, #portfolio-form-email, #portfolio-form-linkedin, #portfolio-form-instagram, #portfolio-form-behance, #portfolio-form-vimeo, #portfolio-form-git, #portfolio-form-personal{display: block; width:180px;}</style>
 	<div id="portfolio-form">
 		<div>
 			<label for="portfolio-form-name">Creator's Name:</label>
 			<input type="text" name="portfolio-form-name" id="portfolio-form-name" value="<?php echo $port_name; ?>" />
+		</div>
+		<div>
+			<label for="portfolio-form-email">Email Address:</label>
+			<input type="text" name="portfolio-form-email" id="portfolio-form-email" value="<?php echo $port_email; ?>" />
 		</div>
 		<div>
 			<label for="portfolio-form-twitter">Twitter Handle:</label>
@@ -50,6 +56,10 @@ function portfolio_meta() {
 		<div>
 			<label for="portfolio-form-behance">Behance URL:</label>
 			<input type="text" name="portfolio-form-behance" id="portfolio-form-behance" value="<?php echo $port_behance; ?>" />
+		</div>
+		<div>
+			<label for="portfolio-form-linkedin">LinkedIn URL:</label>
+			<input type="text" name="portfolio-form-linkedin" id="portfolio-form-linkedin" value="<?php echo $port_linkedin; ?>" />
 		</div>
 		<div>
 			<label for="portfolio-form-vimeo">Vimeo URL:</label>
@@ -87,6 +97,8 @@ function portfolio_meta_save() {
 
 	// $input['position'] = (isset($_POST['portfolio-form-position']) ? $_POST['portfolio-form-position'] : '');
 	$input['name'] = (isset($_POST['portfolio-form-name']) ? $_POST['portfolio-form-name'] : '');
+	$input['email'] = (isset($_POST['portfolio-form-email']) ? $_POST['portfolio-form-email'] : '');
+	$input['linkedin'] = (isset($_POST['portfolio-form-linkedin']) ? $_POST['portfolio-form-linkedin'] : '');
 	$input['twitter'] = (isset($_POST['portfolio-form-twitter']) ? $_POST['portfolio-form-twitter'] : '');
 	$input['behance'] = (isset($_POST['portfolio-form-behance']) ? $_POST['portfolio-form-behance'] : '');
 	$input['vimeo'] = (isset($_POST['portfolio-form-vimeo']) ? $_POST['portfolio-form-vimeo'] : '');
