@@ -25,6 +25,8 @@ get_header(); ?>
 							$category = get_the_category(); 
 							$image_url = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'full');
 							$name = get_post_meta($post->ID, 'portfolio-form-name', true);
+							$linkedin = get_post_meta($post->ID, 'portfolio-form-linkedin', true);
+							$email = get_post_meta($post->ID, 'portfolio-form-email', true);
 							$twitter = get_post_meta($post->ID, 'portfolio-form-twitter', true);
 							$behance = get_post_meta($post->ID, 'portfolio-form-behance', true);
 							$vimeo = get_post_meta($post->ID, 'portfolio-form-vimeo', true);
@@ -37,6 +39,11 @@ get_header(); ?>
 									<h1><?php echo $name; ?></h1>
 									<div class="itemIcons">
 										<?php 
+										if($email){
+											?>
+											<a id="emailIcon" target="_blank" href="mailto:<?php echo $email ?>"><i class="fa fa-envelope"></i></a>
+											<?php
+										}
 										if($twitter){
 											?>
 											<a id="twitterIcon" target="_blank" href="https://twitter.com/<?php echo $twitter ?>"><i class="fa fa-twitter"></i></a>
@@ -44,12 +51,17 @@ get_header(); ?>
 										}
 										if($instagram){
 											?>
-											<a id="twitterIcon" target="_blank" href="<?php echo $instagram ?>"><i class="fa fa-instagram"></i></a>
+											<a id="twitterIcon" target="_blank" href="http://instagram.com/<?php echo $instagram ?>"><i class="fa fa-instagram"></i></a>
 											<?php
 										}
 										if($behance){
 											?>
 											<a id="behanceIcon" target="_blank" href="<?php echo $behance ?>"><i class="fa fa-behance"></i></a>
+											<?php
+										}
+										if($linkedin){
+											?>
+											<a id="linkedinIcon" target="_blank" href="<?php echo $linkedin ?>"><i class="fa fa-linkedin"></i></a>
 											<?php
 										}
 										if($vimeo){
