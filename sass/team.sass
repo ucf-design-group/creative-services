@@ -1,7 +1,6 @@
 .page-team
 
 	.creative-team
-		max-width: 1280px
 		width: 100%
 		margin: 0 auto
 		padding: 10px 10px 3% 10px
@@ -22,37 +21,47 @@
 		clear: both
 
 	.item 
-		width: 33%
-		height: 310px
-		padding-top: 2%
+		width: 25%
+		height: 500px
 		float: left
 		cursor: pointer
 		text-align: center
 		border-radius: 4px
+		background-size: cover
+		background-position: center center
+		border: 5px solid rgba(90,119,170,1)
 
-	.width2
-		height: 500px
 
 
 
-	// .creative
-	// 	display: inline-block
-	// 	text-align: center
-	// 	padding: 2em 3em 5em 3em
+	.nameHeader
+		background-color: white
 
 		h3
-			font-size: 2em
+			padding: 0.3em 0
+			font-size: 2.5em
 			font-weight: 300
-			color: white
+			color: rgba(90,119,170,1)
+			font-family: 'gotham'
 
-	.creativeHeadshot
-		img
-			border-radius: 4px
-			padding: 0.25em
-			background-color: white
-			height: 250px
-			width: 250px
-			cursor: pointer
+	.itemIcons
+		position: absolute
+		bottom: 0
+		text-align: center
+		background-color: white
+		width: 100%
+		overflow: hidden
+		height: 0
+
+
+		a
+			font-size: 3.5em
+			color: rgba(90,119,170,1)
+			margin: 0 1.5%
+			transition: color 0.2s ease-in-out
+
+			&:hover
+				color: rgba(38,43,49,1)
 
 
 	label, input
@@ -90,7 +99,4 @@
 
 	form
 		text-align: right
-
-
-	#graphicSection, #webSection, #productionSection
-		display: none
+		
