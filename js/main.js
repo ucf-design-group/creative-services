@@ -44,7 +44,7 @@ function homeSize(){
 	}
 }
 
-
+//Sorting Function
 function selectionListener() {
 						    
 	checkedStr = '';
@@ -64,6 +64,8 @@ function selectionListener() {
 	}
 }
 
+
+
 // When the document loads, adjust the nav and add click handlers for the
 // mobile view of the menu.
 
@@ -71,6 +73,14 @@ $(document).ready(function () {
 
 	adjustNav();
 	homeSize();
+
+
+	$('.page-team .item').mouseenter(function() {
+		$(this).find(".itemIcons").animate({"height":"50px"},250);
+	});
+	$('.page-team .item').mouseleave(function(){
+		$(this).find(".itemIcons").animate({"height":"0px"},200);
+	});
 
 	  
 	$('.isotope').isotope({
