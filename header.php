@@ -9,6 +9,11 @@
 		<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 		<![endif]-->
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+		<?php if(is_page('work') || is_page('team')){
+			?>
+				<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/fancybox/source/jquery.fancybox.css?v=2.1.5" media="screen" />
+			<?php
+		} ?>
 		<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css">
 	</head>
 <?php

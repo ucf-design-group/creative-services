@@ -23,6 +23,8 @@
 		<?php if(is_page('work') || is_page('team')){
 			//Only add plugins on specificed 'work' / 'team' pages.
 			?>
+			<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/fancybox/source/jquery.fancybox.js?v=2.1.5"></script>
+			<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
 			<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/isotope.js"></script>
 			<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/packery.js"></script>
 			<?php
