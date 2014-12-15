@@ -62,7 +62,7 @@ function portfolio_meta() {
 			<input type="text" name="portfolio-form-linkedin" id="portfolio-form-linkedin" value="<?php echo $port_linkedin; ?>" />
 		</div>
 		<div>
-			<label for="portfolio-form-vimeo">Vimeo URL:</label>
+			<label for="portfolio-form-vimeo">Vimeo Video URL:</label>
 			<input type="text" name="portfolio-form-vimeo" id="portfolio-form-vimeo" value="<?php echo $port_vimeo; ?>" />
 		</div>
 		<div>

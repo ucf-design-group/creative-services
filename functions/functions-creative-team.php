@@ -62,7 +62,7 @@ function creative_meta() {
 			<input type="text" name="creative-form-linkedin" id="creative-form-linkedin" value="<?php echo $linkedin; ?>" />
 		</div>
 		<div>
-			<label for="creative-form-vimeo">Vimeo URL:</label>
+			<label for="creative-form-vimeo">Vimeo Profile URL:</label>
 			<input type="text" name="creative-form-vimeo" id="creative-form-vimeo" value="<?php echo $vimeo; ?>" />
 		</div>
 		<div>
