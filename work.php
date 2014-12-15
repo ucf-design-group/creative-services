@@ -23,6 +23,7 @@ get_header(); ?>
 							$title = get_the_title();
 							$content = get_the_content();
 							$category = get_the_category(); 
+							$image = get_the_post_thumbnail($post->ID, 'full');
 							$image_url = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'full');
 							$name = get_post_meta($post->ID, 'portfolio-form-name', true);
 							$linkedin = get_post_meta($post->ID, 'portfolio-form-linkedin', true);
@@ -36,6 +37,19 @@ get_header(); ?>
 
 ?>							<div class="item <?php if($category){ if($category[0]->cat_name == 'Video'){ echo 'width2'; } } ?> <?php if($category){ echo $category[0]->cat_name; } ?>" style="background-image: url('<?php echo $image_url[0]; ?>');">
 								<div class="itemDescription">
+								<?php 
+									if($category){ 
+										if($category[0]->cat_name == 'Video'){ 
+											?>
+												<a id="expandIcon" class="fancybox-media" href="<?php echo $vimeo ?>"><i class="fa fa-expand"></i></a>
+											<?php
+										}else{
+											?>
+												<a id="expandIcon" class="fancybox" rel="group" href="<?php echo $image_url[0]; ?>"><i class="fa fa-expand"></i></a>
+											<?php
+										} 
+									} 
+								?>
 									<h1><?php echo $name; ?></h1>
 									<div class="itemIcons">
 										<?php 
@@ -62,11 +76,6 @@ get_header(); ?>
 										if($linkedin){
 											?>
 											<a id="linkedinIcon" target="_blank" href="<?php echo $linkedin ?>"><i class="fa fa-linkedin"></i></a>
-											<?php
-										}
-										if($vimeo){
-											?>
-											<a id="vimeoIcon" target="_blank" href="<?php echo $vimeo ?>"><i class="fa fa-vimeo-square"></i></a>
 											<?php
 										}
 										if($git){
