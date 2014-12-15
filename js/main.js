@@ -71,6 +71,17 @@ function selectionListener() {
 
 $(document).ready(function () {
 
+	//Fancy
+	$(".fancybox").fancybox();
+	$('.fancybox-media').fancybox({
+		openEffect  : 'none',
+		closeEffect : 'none',
+		helpers : {
+			media : {}
+		}
+	});
+	//Fancy End
+	
 	adjustNav();
 	homeSize();
 
