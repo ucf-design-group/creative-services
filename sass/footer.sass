@@ -18,7 +18,7 @@ $osi_offset: ($ucf_width + $sga_width) / ($total_width - $osi_width) * 100%
 $dg_offset: 100%
 
 footer
-	padding: 4em 0
+	padding: 4em 1.5em
 	text-align: center
 	width: 100%
 	
@@ -26,6 +26,9 @@ footer
 		color: white
 		font-size: 1.5em
 		font-weight: 300
+
+		@media screen and (max-width: 500px)
+			font-size: 1.25em
 
 	a
 		text-decoration: none

@@ -8,6 +8,7 @@
 		height: 650px
 		border-bottom: 1px solid rgba(0,0,0,0.1)
 		text-align: center
+		padding: 2em
 
 		h1
 			font-size: 4.2em
@@ -15,14 +16,25 @@
 			display: block
 			font-family: 'gotham-med'
 			position: relative
-			top: 35%
+			top: 34%
 
 		p
 			font-size: 1.8em
 			font-weight: 300
-			width: 890px
+			max-width: 890px
+			width: 100%
 			margin: 0.5% auto 
 			color: rgba(240,240,240,1)
 			font-family: 'gotham'
 			position: relative
-			top: 35%
+			top: 34%
+
+@media screen and (max-width: 500px)
+	.page-about
+		.content-area
+			margin-top: 2%
+		.aboutImage
+			h1
+				top: 26%
+			p
+				top: 26%
