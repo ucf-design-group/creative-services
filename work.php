@@ -17,7 +17,7 @@ get_header(); ?>
 				</form>
 				<div class="isotope">
 <?php
-						$creativeLoop = new WP_QUERY(array('post_type' => 'portfolio', 'posts_per_page' => -1, 'orderby' =>'rand'/*meta_key*/, 'order' => 'DSC'));
+						$creativeLoop = new WP_QUERY(array('post_type' => 'portfolio', 'posts_per_page' => 20, 'orderby' =>'rand'/*meta_key*/, 'order' => 'DSC'));
 						while ($creativeLoop->have_posts()) {
 							$creativeLoop->the_post();
 							$title = get_the_title();
