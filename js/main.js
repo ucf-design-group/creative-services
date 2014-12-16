@@ -6,13 +6,13 @@
 ////////////////
 
 // Use this variable to set the breakpoint at which the menu changes.
-var breakPoint = 815;
+// var breakPoint = 850;
 
 
 // This function uses CSS classes to change the appearance of the menu.
 function adjustNav() {
 
-	if ($(document).width() < breakPoint) {
+	if ($(document).width() < 850) {
 
 		$("nav.main-menu").removeClass("full").addClass("compact");
 		$("nav.main-menu ul").hide();
@@ -31,12 +31,14 @@ function homeSize(){
 	if(window.location.pathname == '/creative-services/'){
 		var viewportHeight = $(window).height() - 50;
 
-		if(viewportHeight <= 900 && viewportHeight >= 800){
+		if(viewportHeight <= 900 && viewportHeight > 800){
 			$('.page-home .content-area').css('height', 900);
 			$('.page-home .content-area').css('padding-top', '3%');
-		}else if(viewportHeight <= 800){
+		}else if(viewportHeight <= 800 && viewportHeight > 650){
 			$('.page-home .content-area').css('height', 900);
 			$('.page-home .content-area').css('padding-top', '0%');
+		}else if(viewportHeight <= 650){
+			$('.page-home .content-area').css('height', 575);
 		}else{
 			$('.page-home .content-area').css('padding-top', '6.5%');
 			$('.page-home .content-area').css('height', viewportHeight);
