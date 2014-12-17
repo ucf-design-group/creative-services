@@ -90,72 +90,72 @@ nav.main-menu.full
 nav.main-menu.compact
 	padding-bottom: 2.5%
 
+	.compact-menu
+		display: block
+		text-align: center
+
 	ul
 		display: none
 		width: 100%
 	
-	li
-		width: 85%
-		display: block
-		margin: 10px auto
-		text-align: center
+		li
+			width: 85%
+			display: block
+			margin: 10px auto
+			text-align: center
 
-	
-	.compact-menu
-		display: block
-		text-align: center
-	
-	a
-		border: 3px solid white
-		border-radius: 4px
-		color: white
-		font-size: 2em
-		display: inline-block
-		padding: 7.5px 0
-		position: relative
-		width: 90%
-		outline: 0
-		overflow:hidden
-		background: none
-		z-index: 1
-		cursor: pointer
-		transition:         0.08s ease-in
-		-o-transition:      0.08s ease-in
-		-ms-transition:     0.08s ease-in
-		-moz-transition:    0.08s ease-in
-		-webkit-transition: 0.08s ease-in
+	ul, .compact-menu
+		
+		a
+			border: 3px solid white
+			border-radius: 4px
+			color: white
+			font-size: 2em
+			display: inline-block
+			padding: 7.5px 0
+			position: relative
+			width: 90%
+			outline: 0
+			overflow:hidden
+			background: none
+			z-index: 1
+			cursor: pointer
+			transition:         0.08s ease-in
+			-o-transition:      0.08s ease-in
+			-ms-transition:     0.08s ease-in
+			-moz-transition:    0.08s ease-in
+			-webkit-transition: 0.08s ease-in
 
-	a:hover 
-		color: $backgroundColor
+		a:hover 
+			color: $backgroundColor
 
-	a:before 
-		content: ""
-		position: absolute
-		background: white
-		cursor: pointer
-		bottom: 0
-		left: 0
-		right: 0
-		top: 100%
-		z-index: -1
-		transition:         top 0.09s ease-in
-		-o-transition:      top 0.09s ease-in
-		-ms-transition:     top 0.09s ease-in
-		-moz-transition:    top 0.09s ease-in
-		-webkit-transition: top 0.09s ease-in
+		a:before 
+			content: ""
+			position: absolute
+			background: white
+			cursor: pointer
+			bottom: 0
+			left: 0
+			right: 0
+			top: 100%
+			z-index: -1
+			transition:         top 0.09s ease-in
+			-o-transition:      top 0.09s ease-in
+			-ms-transition:     top 0.09s ease-in
+			-moz-transition:    top 0.09s ease-in
+			-webkit-transition: top 0.09s ease-in
 
-	a:hover:before 
-		top: 0
+		a:hover:before 
+			top: 0
 
-	a.toggOn
-		background-color: white 
-		color: $backgroundColor
+		a.toggOn
+			background-color: white 
+			color: $backgroundColor
 
 .screen-reader-text
 	display: none
 
-
-.navLogo
+.navLogo, #navLogoLink
 	width: 450px
 	margin: 0 auto
 	display: block
