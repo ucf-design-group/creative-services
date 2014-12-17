@@ -66,7 +66,27 @@ function selectionListener() {
 	}
 }
 
+//Mobile Work Reveals
+function itemReveal(){
+	if($(window).width() <= 800){
+		$( ".itemDescription" ).click(function() {
+		if(itemShow == false){
+				$( this ).css( "opacity", 1 );
+				itemShow = true;
+		}else if(itemShow == true){
+				$(".itemDescription").css("opacity", 0);
+				itemShow = false;
+		}
+		});
+	}
+}
 
+
+
+
+//Variables
+itemShow = false;
+workShow = false;
 
 // When the document loads, adjust the nav and add click handlers for the
 // mobile view of the menu.
@@ -75,15 +95,28 @@ $(document).ready(function () {
 
 	adjustNav();
 	homeSize();
+	itemReveal();
 
 
-	$('.page-team .item').mouseenter(function() {
-		$(this).find(".itemIcons").animate({"height":"50px"},250);
-	});
-	$('.page-team .item').mouseleave(function(){
-		$(this).find(".itemIcons").animate({"height":"0px"},200);
-	});
-	  
+	if($(window).width() >= 800){
+		$('.page-team .item').mouseenter(function() {
+			$(this).find(".itemIcons").animate({"height":"50px"},250);
+		});
+
+		$('.page-team .item').mouseleave(function(){
+			$(this).find(".itemIcons").animate({"height":"0px"},200);
+		});
+	}else{
+		$( ".page-team .item" ).click(function() {
+			if(workShow == false){
+				$(this).find(".itemIcons").animate({"height":"50px"},250);
+				workShow = true;
+			}else if(workShow == true){
+				$(".itemIcons").animate({"height":"0px"},200);
+				workShow = false;
+			}
+		});
+	}
 
 
 	menuShow = false;
@@ -130,4 +163,5 @@ $(window).resize(function () {
 
 	adjustNav();
 	homeSize();
+	itemReveal();
 });
