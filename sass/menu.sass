@@ -173,3 +173,12 @@ body
 	.navLogo
 		width: 100%
 		padding: 0 1em
+
+
+
+//Browser Hack for Mozilla. It didn't seem to like my nav bar as much as chrome.
+@-moz-document url-prefix()
+	
+	nav.main-menu.full
+		ul
+			width: 802px
