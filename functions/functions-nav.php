@@ -119,4 +119,8 @@ function page_meta_save($post_id, $post) {
 	}
 }
 
+function creative_file_upload(){
+    echo "Admin Page Test";	
+}
+
 ?>
