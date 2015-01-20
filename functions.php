@@ -40,33 +40,52 @@ function remove_menus() {
 	remove_menu_page('edit-comments.php');
 
 	$user = wp_get_current_user();
-	if ($user->wp_capabilities['administrator'] != 1) {
+	//if ($user->wp_capabilities['Administrator'] != 1) {
 
 			remove_submenu_page('index.php', 'update-core.php');
 		//remove_menu_page('edit.php?post_type=page');
 			//remove_submenu_page('edit.php', 'post-new.php?post_type=page');
-		remove_menu_page('themes.php');
-			remove_submenu_page('themes.php', 'widgets.php');
-			remove_submenu_page('themes.php', 'nav-menus.php');
-			remove_submenu_page('themes.php', 'theme-editor.php');
+		//remove_menu_page('themes.php');
+			//remove_submenu_page('themes.php', 'widgets.php');
+			//remove_submenu_page('themes.php', 'nav-menus.php');
+			//remove_submenu_page('themes.php', 'theme-editor.php');
 		remove_menu_page('plugins.php');
 			remove_submenu_page('plugins.php', 'plugin-install.php');
 			remove_submenu_page('plugins.php', 'plugin-editor.php');
 		//remove_menu_page('users.php');
-			remove_submenu_page('users.php', 'user-new.php');
+			//remove_submenu_page('users.php', 'user-new.php');
 			//remove_submenu_page('users.php', 'profile.php');
 		remove_menu_page('tools.php');
 			remove_submenu_page('tools.php', 'import.php');
 			remove_submenu_page('tools.php', 'export.php');
-		remove_menu_page('options-general.php');
-			remove_submenu_page( 'options-general.php', 'options-writing.php' );
-			remove_submenu_page( 'options-general.php', 'options-reading.php' );
-			remove_submenu_page( 'options-general.php', 'options-discussion.php' );
-			remove_submenu_page( 'options-general.php', 'options-media.php' );
-			remove_submenu_page( 'options-general.php', 'options-permalink.php' );
-	}
+		//remove_menu_page('options-general.php');
+			//remove_submenu_page( 'options-general.php', 'options-writing.php' );
+			//remove_submenu_page( 'options-general.php', 'options-reading.php' );
+			//remove_submenu_page( 'options-general.php', 'options-discussion.php' );
+			//remove_submenu_page( 'options-general.php', 'options-media.php' );
+			//remove_submenu_page( 'options-general.php', 'options-permalink.php' );
+	//}
 }
-//add_action('admin_menu', 'remove_menus');
+add_action('admin_menu', 'remove_menus');
+
+
+/*	Add menus to the admin dashboard
+ * 	
+ *	In order for creativer users (graphics, video and web designers) to upload their work,
+ * 	this menu is necessary. Users will be able to login to the site, upload files, and access
+ *	their work using this method.
+ *	
+ *	The call for this page is located in the functions/functions.nav
+ */
+function register_file_upload_menu(){
+
+	/* 	Adds upload functions for all users, admins and creative 
+		users (graphics, video and web). */
+
+    add_menu_page( 'File Upload', 'File Upload', 'manage_options', 'file-upload', 'creative_file_upload',plugins_url( 'myplugin/images/icon.png'), 6 ); 
+    		add_submenu_page( 'file-upload', 'My Custom Submenu Page', 'My Custom Submenu Page', 'manage_options', 'my-custom-submenu-page', 'my_custom_submenu_page_callback' );
+}
+add_action( 'admin_menu', 'register_file_upload_menu' );
 
 
 /* Sample Custom Post Type
@@ -136,5 +155,6 @@ function cpt_icons() {
 include_once("functions/functions-nav.php");
 include_once("functions/functions-creative-team.php");
 include_once("functions/functions-portfolio.php");
+include_once("functions/functions-user-profile.php")
 
 ?>
