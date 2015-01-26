@@ -156,5 +156,5 @@ include_once("functions/functions-nav.php");
 include_once("functions/functions-creative-team.php");
 include_once("functions/functions-portfolio.php");
 include_once("functions/functions-user-profile.php")
-
+include_once("functions/functions-user-roles.php")
 ?>
