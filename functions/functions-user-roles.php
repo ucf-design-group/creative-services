@@ -9,12 +9,13 @@ $result = add_role(
         'delete_posts' => false, // Use false to explicitly deny
     )
 );
+/*
 if ( null !== $result ) {
     echo 'Role created!';
 }
 else {
     echo 'This role already exists!';
-}
+}*/
 
 function add_roles() {
 	add_role( 'creative_member', 'Creative', array( 'read' => true, 'level_2' => true ) );
