@@ -75,6 +75,35 @@ function profile_admin_buffer_end() { ob_end_flush(); }
 add_action('admin_head', 'profile_admin_buffer_start');
 add_action('admin_footer', 'profile_admin_buffer_end');
 
+
+/**
+ * Modifies default user profile and removes 'color-picker' options.
+ * 
+ * We don't need users changing too many settings when they should be uploading
+ * files instead so in the interest of not wasting time, the color scheme options
+ * have been removed.
+ */
+// Removes admin 'color scheme picker' from user profiles
+remove_action( 'admin_color_scheme_picker', 'admin_color_scheme_picker' );
+
+if ( ! function_exists( 'cor_remove_personal_options' ) ) {
+
+	// Removes the leftover 'Visual Editor', 'Keyboard Shortcuts' and 'Toolbar' options.
+  	function cor_remove_personal_options( $subject ) {
+    	$subject = preg_replace( '#<h3>Personal Options</h3>.+?/table>#s', '', $subject, 1 );
+    	return $subject;
+  	}
+
+	// Calls the function 'cor_remove_personal_options' to run while editing the buffer filter.
+  	function cor_profile_subject_start() { ob_start( 'cor_remove_personal_options' ); }
+  	// Closes output buffering for the personal options sectoin.
+  	function cor_profile_subject_end() { ob_end_flush(); }
+}
+add_action( 'admin_head-profile.php', 'cor_profile_subject_start' );
+add_action( 'admin_footer-profile.php', 'cor_profile_subject_end' );
+
+
+
 /*
 <?php function posts_for_current_author($query) {
 	global $pagenow;
