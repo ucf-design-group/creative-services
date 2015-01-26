@@ -65,4 +65,29 @@ function remove_bio($buffer) {
 	return $buffer;
 }
 
+// Calls thhe 'remove_bio' function when the 'admin' section of the profile starts and
+// starts output buffering.
+function profile_admin_buffer_start() { ob_start("remove_bio"); }
+
+// Closes output buffering once the 'admin' section of the profile ends.
+function profile_admin_buffer_end() { ob_end_flush(); }
+
+add_action('admin_head', 'profile_admin_buffer_start');
+add_action('admin_footer', 'profile_admin_buffer_end');
+
+/*
+<?php function posts_for_current_author($query) {
+	global $pagenow;
+
+	if( 'edit.php' != $pagenow || !$query->is_admin )
+	    return $query;
+
+	if( !current_user_can( 'manage_options' ) ) {
+		global $user_ID;
+		$query->set('author', $user_ID );
+	}
+	return $query;
+}
+add_filter('pre_get_posts', 'posts_for_current_author');
+*/
 ?>
