@@ -77,15 +77,15 @@ add_action('admin_menu', 'remove_menus');
  *	
  *	The call for this page is located in the functions/functions.nav
  */
-function register_file_upload_menu(){
+// function register_file_upload_menu(){
 
-	/* 	Adds upload functions for all users, admins and creative 
-		users (graphics, video and web). */
+// 	/* 	Adds upload functions for all users, admins and creative 
+// 		users (graphics, video and web). */
 
-    add_menu_page( 'File Upload', 'File Upload', 'manage_options', 'file-upload', 'creative_file_upload',plugins_url( 'myplugin/images/icon.png'), 6 ); 
-    		add_submenu_page( 'file-upload', 'My Custom Submenu Page', 'My Custom Submenu Page', 'manage_options', 'my-custom-submenu-page', 'my_custom_submenu_page_callback' );
-}
-add_action( 'admin_menu', 'register_file_upload_menu' );
+//     add_menu_page( 'File Upload', 'File Upload', 'manage_options', 'file-upload', 'creative_file_upload',plugins_url( 'myplugin/images/icon.png'), 6 ); 
+//     		add_submenu_page( 'file-upload', 'My Custom Submenu Page', 'My Custom Submenu Page', 'manage_options', 'my-custom-submenu-page', 'my_custom_submenu_page_callback' );
+// }
+// add_action( 'admin_menu', 'register_file_upload_menu' );
 
 
 /* Sample Custom Post Type
@@ -101,30 +101,75 @@ add_action( 'admin_menu', 'register_file_upload_menu' );
 
 function custom_post_types() {
 
-	register_post_type('creative-team', array(
-	'labels' => array(
-		'name' => 'Creative Team',
-		'singular_name' => 'Creative'),
-	'public' => true,
-	'hierarchical' => false,
-	'supports' => array('title', 'thumbnail'),
-	'taxonomies' => array('category'),
-	'has_archive' => false
-	));
+	/**
+	 * Adds post type 'file-upload' for creative users to upload content to the site.
+	 *
+	 * One important thing to note here is the use of the post type's capabilities.
+	 * Because creative users will need permission to read/write/edit/upload/etc. their
+	 * uploads to the site, appropriate permissions (capabilities) must be designated
+	 * so that the capabilities can be added to the creative user role.
+	 *
+	 * These capabilities correspond with functionality for the role 'creative-user'
+	 * which us defined in "functions/functions-user-roles". For a direct correlation
+	 * between this post type and creative users, view this file.
+	 *
+	 * For more information on capabilities, look at: http://codex.wordpress.org/Function_Reference/register_post_type
+	*/
 
-	register_post_type('portfolio', array(
-	'labels' => array(
-		'name' => 'Portfolio',
-		'singular_name' => 'Piece'),
-	'public' => true,
-	'hierarchical' => false,
-	'supports' => array('title', 'thumbnail'),
-	'taxonomies' => array('category'),
-	'has_archive' => false
+	register_post_type('file-upload', array(
+	'labels' 			=> array(
+		'name' 			=> 'File Upload',
+		'singular_name' => 'File Upload'),
+	'public'			=> true,
+	'hierarchical'		=> false,
+	'supports' 			=> array('title', 'thumbnail', 'editor'),
+	'capability_type' 		=> 'upload',
+	'capabilities' 		=> array(
+
+		/* Capabilities that will be granted to creative users */
+		//'read'					=> 'read_uploads',
+		//'read_post' 			=> 'read_upload',
+		// 'create_posts'			=> 'create_uploads',	
+		//'edit_posts' 			=> 'edit_uploads',	
+		// 'publish_posts' 		=> 'publish_uploads',
+  //       'edit_published_posts'  => "edit_published_uploads",
+  //       'delete_published_posts'=> "delete_published_uploads",
+		//'delete_posts' 			=> 'delete_uploads',
+
+		/* Capabilities that will be explicitly removed for creative users */
+		// 'read_private_posts'	=> 'read_private_uploads',
+		// 'edit_others_posts'	 	=> "edit_others_uploads",
+	 //    'delete_private_posts'  => "delete_priate_uploads",
+  //       'delete_others_posts'   => "delete_others_uploads",
+  //       'edit_private_posts'    => "edit_private_uploads",
+		),
+	'taxonomies' 		=> array('category'),
+	'has_archive' 		=> false
 	));
 }
 add_action('init', 'custom_post_types');
 
+
+/**
+ *
+ 
+function register_cpt_gallery() {
+$labels = array( 
+    'name' => _x( 'File Uploads', 'File Uploads' ),
+    'singular_name' => _x( 'Gallery', 'gallery' ),
+    'add_new' => _x( 'Add New', 'gallery' ),
+    'add_new_item' => _x( 'Add New Gallery', 'gallery' ),
+    'edit_item' => _x( 'Edit Gallery', 'gallery' ),
+    'new_item' => _x( 'New Gallery', 'gallery' ),
+    'view_item' => _x( 'View Gallery', 'gallery' ),
+    'search_items' => _x( 'Search Galleries', 'gallery' ),
+    'not_found' => _x( 'No galleries found', 'gallery' ),
+    'not_found_in_trash' => _x( 'No galleries found in Trash', 'gallery' ),
+    'parent_item_colon' => _x( 'Parent Gallery:', 'gallery' ),
+    'menu_name' => _x( 'Galleries', 'gallery' ),
+);
+add_action( 'init', 'register_cpt_gallery' );
+*/
 
 /* Change dashboard icons for the custom post types.
  *
@@ -153,8 +198,9 @@ function cpt_icons() {
 /* To include other collections of functions, include_once() the relevant files here. */
 
 include_once("functions/functions-nav.php");
-include_once("functions/functions-creative-team.php");
-include_once("functions/functions-portfolio.php");
-include_once("functions/functions-user-profile.php")
-include_once("functions/functions-user-roles.php")
+// include_once("functions/functions-creative-team.php"), 'editor';
+// include_once("functions/functions-portfolio.php");
+include_once("functions/functions-user-profile.php");
+include_once("functions/functions-user-roles.php");
+include_once("functions/functions-admin-posts.php");
 ?>
