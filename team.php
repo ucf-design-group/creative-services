@@ -15,11 +15,32 @@ get_header(); ?>
 							<input type="radio" name="position[]" value="Graphics" id="graphics" onclick="selectionListener();"/><label for="graphics">Graphics</label>
 							<input type="radio" name="position[]" value="Web" id="web" onclick="selectionListener();"/><label for="web">Web</label>
 							<input type="radio" name="position[]" value="Productions" id="productions" onclick="selectionListener();"/><label for="productions">Productions</label>
-							<input type="radio" name="position[]" value="All" id="all" checked="checked" onclick="selectionListener();"/><label for="all">All</label>
+																<input type="radio" name="position[]" value="All" id="all" checked="checked" onclick="selectionListener();"/><label for="all">All</label>
 						</form>
 						<div class="isotope">
+<?php 					
+
+						$creative_users = get_users( array('role' => 'creative_member' ));
+						// Array of WP_User objects.
+						foreach ( $creative_users as $creative_user ) :?>
+	 						<article id="<?php echo $title ?>" class="item <?php if($category){ echo $category[0]->cat_name; } ?>" style="background-image:url('<?php echo $image_url[0] ?>');">
+							<div class="nameHeader"><h3><?php echo $user->user_nicename ?></h3></div>
+							<div class="itemIcons">
+								<a id="emailIcon" target="_blank" href="mailto:<?php echo $user?>"><i class="fa fa-envelope"></i></a>
+							</div> -->
+						</article>
+<?php 					endforeach; ?>
+
+
+
+
+
+
+
 <?php
-						$creativeLoop = new WP_QUERY(array('post_type' => 'creative-team', 'posts_per_page' => -1, 'orderby' =>'meta_value', 'order' => 'ASC'));
+
+
+						/*$creativeLoop = new WP_QUERY(array('post_type' => 'creative-team', 'posts_per_page' => -1, 'orderby' =>'meta_value', 'order' => 'ASC'));
 						while ($creativeLoop->have_posts()) {
 							$creativeLoop->the_post();
 							$title = get_the_title();
@@ -34,10 +55,10 @@ get_header(); ?>
 							$vimeo = get_post_meta($post->ID, 'creative-form-vimeo', true);
 							$git = get_post_meta($post->ID, 'creative-form-git', true);
 							$personal = get_post_meta($post->ID, 'creative-form-personal', true);
-							$instagram = get_post_meta($post->ID, 'creative-form-instagram', true);
+							$instagram = get_post_meta($post->ID, 'creative-form-instagram', true);*/
 
 ?>							
-						<article id="<?php echo $title ?>" class="item <?php if($category){ echo $category[0]->cat_name; } ?>" style="background-image:url('<?php echo $image_url[0] ?>');">
+					<!-- 	<article id="<?php echo $title ?>" class="item <?php if($category){ echo $category[0]->cat_name; } ?>" style="background-image:url('<?php echo $image_url[0] ?>');">
 							<div class="nameHeader"><h3><?php echo $title; ?></h3></div>
 							<div class="itemIcons">
 								<?php 
@@ -83,7 +104,7 @@ get_header(); ?>
 								}
 								?>
 							</div>
-						</article>
+						</article> -->
 						<script>
 							document.getElementById('<?php echo $title ?>').onmouseover = function(){
 								var funnyURL = '<?php echo $image_url[0]; ?>';
@@ -96,8 +117,18 @@ get_header(); ?>
 								document.getElementById('<?php echo $title ?>').style.backgroundImage = 'url('+normalURL+')';
 							};
 						</script>
-<?php 				}
+
+<?php 				/*}*/
 ?>
+
+
+
+
+
+
+
+
+
 						</div>
 					</section>
 				</div>
