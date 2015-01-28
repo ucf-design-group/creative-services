@@ -118,9 +118,4 @@ function page_meta_save($post_id, $post) {
 			delete_post_meta($post_id, 'page-form-' . $field, $old);
 	}
 }
-
-function creative_file_upload(){
-    echo "Admin Page Test";	
-}
-
 ?>

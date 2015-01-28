@@ -24,10 +24,41 @@ get_header(); ?>
 						// Array of WP_User objects.
 						foreach ( $creative_users as $creative_user ) :?>
 	 						<article id="<?php echo $title ?>" class="item <?php if($category){ echo $category[0]->cat_name; } ?>" style="background-image:url('<?php echo $image_url[0] ?>');">
-							<div class="nameHeader"><h3><?php echo $user->user_nicename ?></h3></div>
+							<div class="nameHeader"><h3><?php echo $creative_user->display_name ?></h3></div>
 							<div class="itemIcons">
-								<a id="emailIcon" target="_blank" href="mailto:<?php echo $user?>"><i class="fa fa-envelope"></i></a>
-							</div> -->
+								<a id="emailIcon" target="_blank" href="mailto:<?php echo $creative_user->user_email ?>"><i class="fa fa-envelope"></i></a>
+<?php 							
+								if($creative_user->role) : ?>
+									<a id="twitterIcon" target="_blank" href="https://twitter.com/<?php echo $creative_user->role ?><?php echo $creative_user->role ?>"><i class="fa fa-twitter"></i></a>
+<?php 							endif;
+
+								if($creativer_user->instagram) : ?>
+									<a id="twitterIcon" target="_blank" href="http://instagram.com/<?php echo $instagram ?>"><i class="fa fa-instagram"></i></a>
+<?php 							endif;
+
+								if($behance) : ?>
+									<a id="behanceIcon" target="_blank" href="<?php echo $behance ?>"><i class="fa fa-behance"></i></a>
+<?php 							endif;
+								
+								if($linkedin) : ?>
+									<a id="linkedinIcon" target="_blank" href="<?php echo $linkedin ?>"><i class="fa fa-linkedin"></i></a>
+<?php 							endif;
+								
+								if($vimeo) : ?>
+									<a id="vimeoIcon" target="_blank" href="<?php echo $vimeo ?>"><i class="fa fa-vimeo-square"></i></a>
+<?php 							endif;
+								
+								if($git) : ?>
+									<a id="gitIcon" target="_blank" href="<?php echo $git ?>"><i class="fa fa-github"></i></a>
+<?php 							endif;
+																
+								if($personal) :	?>
+									<a id="personalIcon" target="_blank" href="<?php echo $personal ?>"><i class="fa fa-user"></i></a>
+<?php 							endif; ?>
+
+
+
+							</div> 
 						</article>
 <?php 					endforeach; ?>
 
