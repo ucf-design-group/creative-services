@@ -28,8 +28,11 @@ get_header(); ?>
 							<div class="nameHeader"><h3><?php echo $creative_user->display_name ?></h3></div>
 							<div class="itemIcons">
 
-<?php  							/* Every account has an email that is associated with the account so there is no need for an if statement here. */?>
-								<a id="emailIcon" target="_blank" href="mailto:<?php echo $creative_user->user_email ?>"><i class="fa fa-envelope"></i></a>
+<?php  							/* Every account has an email that is associated with the account so there is no need for an if statement here. 
+								
+								Email is no longer required at the moment, but this will remain commented out so that if we ever
+								do need it, it doesn't have to be re-written.
+								<a id="emailIcon" target="_blank" href="mailto:<?php echo $creative_user->user_email ?>"><i class="fa fa-envelope"></i></a> */?>
 <?php 							
 
 								/* All of the following calls for personal user information are usernames that can be stored
