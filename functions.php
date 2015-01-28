@@ -32,15 +32,15 @@ function remove_menus() {
 		remove_submenu_page('edit.php', 'post-new.php');
 		remove_submenu_page('edit.php', 'edit-tags.php?taxonomy=category');
 		remove_submenu_page('edit.php', 'edit-tags.php?taxonomy=post_tag');
-	remove_menu_page('upload.php');
-		remove_submenu_page('upload.php', 'media-new.php');
+	// remove_menu_page('upload.php');
+		// remove_submenu_page('upload.php', 'media-new.php');
 	remove_menu_page('link-manager.php');
 		remove_submenu_page('link-manager.php', 'link-add.php');
 		remove_submenu_page('link-manager.php', 'edit-tags.php?taxonomy=link_category');
 	remove_menu_page('edit-comments.php');
 
 	$user = wp_get_current_user();
-	//if ($user->wp_capabilities['Administrator'] != 1) {
+	// if ($user->wp_capabilities['Administrator'] != 1) {
 
 			remove_submenu_page('index.php', 'update-core.php');
 		//remove_menu_page('edit.php?post_type=page');
@@ -64,7 +64,7 @@ function remove_menus() {
 			//remove_submenu_page( 'options-general.php', 'options-discussion.php' );
 			//remove_submenu_page( 'options-general.php', 'options-media.php' );
 			//remove_submenu_page( 'options-general.php', 'options-permalink.php' );
-	//}
+	// }
 }
 add_action('admin_menu', 'remove_menus');
 
