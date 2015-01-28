@@ -120,19 +120,19 @@ $(document).ready(function () {
 
 	if($(window).width() >= 800){
 		$('.page-team .item').mouseenter(function() {
-			$(this).find(".itemIcons").animate({"height":"50px"},250);
+			$(this).find(".itemIcons").stop().animate({"height":"50px"},250);
 		});
 
 		$('.page-team .item').mouseleave(function(){
-			$(this).find(".itemIcons").animate({"height":"0px"},200);
+			$(this).find(".itemIcons").stop().animate({"height":"0px"},200);
 		});
 	}else{
 		$( ".page-team .item" ).click(function() {
 			if(workShow == false){
-				$(this).find(".itemIcons").animate({"height":"50px"},250);
+				$(this).find(".itemIcons").stop().animate({"height":"50px"},250);
 				workShow = true;
 			}else if(workShow == true){
-				$(".itemIcons").animate({"height":"0px"},200);
+				$(".itemIcons").stop().animate({"height":"0px"},200);
 				workShow = false;
 			}
 		});
