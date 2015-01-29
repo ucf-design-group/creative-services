@@ -17,7 +17,11 @@ get_header(); ?>
 				</form>
 				<div class="isotope">
 <?php
-						$creativeLoop = new WP_QUERY(array('post_type' => 'portfolio', 'posts_per_page' => 20, 'orderby' =>'rand'/*meta_key*/, 'order' => 'DSC'));
+						// Gets a list of all the creative users (users with the role 'creative_member').
+						$creative_users = get_users( array('role' => 'creative_member' ));
+
+						// Creates a list of all the portfolio works that have been uploaded by creative members.
+						$creativeLoop = new WP_QUERY(array('post_type' => 'portfolio', 'posts_per_page' => -1, 'orderby' =>'rand'/*meta_key*/, 'order' => 'DSC'));
 						while ($creativeLoop->have_posts()) {
 							$creativeLoop->the_post();
 							$title = get_the_title();
@@ -34,58 +38,61 @@ get_header(); ?>
 							$git = get_post_meta($post->ID, 'portfolio-form-git', true);
 							$personal = get_post_meta($post->ID, 'portfolio-form-personal', true);
 							$instagram = get_post_meta($post->ID, 'portfolio-form-instagram', true);
+							$user_ID = get_post_meta($opst->ID), 'portfolio-form-user-id', true);
 
-?>							<div class="item <?php if($category){ if($category[0]->cat_name == 'Video'){ echo 'width2'; } } ?> <?php if($category){ echo $category[0]->cat_name; } ?>" style="background-image: url('<?php echo $image_url[0]; ?>');">
+							// Gets the current user as a user object so personal link information can be pulled appropriately.
+							$creative_user = get_user( get_current_user_id() ); ?>
+
+							<div class="item <?php if($category){ if($category[0]->cat_name == 'Video'){ echo 'width2'; } } ?> <?php if($category){ echo $category[0]->cat_name; } ?>" style="background-image: url('<?php echo $image_url[0]; ?>');">
 								<div class="itemDescription">
-								<?php 
+<?php 
 									if($category){ 
-										if($category[0]->cat_name == 'Video'){ 
-											?>
-												<a id="expandIcon" class="fancybox-media" href="<?php echo $vimeo ?>"><i class="fa fa-expand"></i></a>
-											<?php
-										}else{
-											?>
+										if($category[0]->cat_name == 'Video'){ ?>
+											<a id="expandIcon" class="fancybox-media" href="<?php echo $vimeo ?>"><i class="fa fa-expand"></i></a>
+<?php
+										} else { ?>
 												<a id="expandIcon" class="fancybox" rel="group" href="<?php echo $image_url[0]; ?>"><i class="fa fa-expand"></i></a>
-											<?php
+<?php
 										} 
-									} 
-								?>
+									} ?>
 									<h1><?php echo $name; ?></h1>
+
 									<div class="itemIcons">
 										<?php 
-										if($email){
+										// Commented because email is not necessary at this time but we might need it later.
+										/*if($creative_user->email){
 											?>
-											<a id="emailIcon" target="_blank" href="mailto:<?php echo $email ?>"><i class="fa fa-envelope"></i></a>
+											<a id="emailIcon" target="_blank" href="mailto:<?php echo $creative_user->email ?>"><i class="fa fa-envelope"></i></a>
+											<?php
+										}*/
+										if($creative_user->twitter){
+											?>
+											<a id="twitterIcon" target="_blank" href="https://twitter.com/<?php echo $creative_user->twitter ?>"><i class="fa fa-twitter"></i></a>
 											<?php
 										}
-										if($twitter){
+										if($creative_user->instagram){
 											?>
-											<a id="twitterIcon" target="_blank" href="https://twitter.com/<?php echo $twitter ?>"><i class="fa fa-twitter"></i></a>
+											<a id="twitterIcon" target="_blank" href="http://instagram.com/<?php echo $creative_user->instagram ?>"><i class="fa fa-instagram"></i></a>
 											<?php
 										}
-										if($instagram){
+										if($creative_user->behance){
 											?>
-											<a id="twitterIcon" target="_blank" href="http://instagram.com/<?php echo $instagram ?>"><i class="fa fa-instagram"></i></a>
+											<a id="behanceIcon" target="_blank" href="<?php echo $creative_user->behance ?>"><i class="fa fa-behance"></i></a>
 											<?php
 										}
-										if($behance){
+										if($creative_user->linkedin){
 											?>
-											<a id="behanceIcon" target="_blank" href="<?php echo $behance ?>"><i class="fa fa-behance"></i></a>
+											<a id="linkedinIcon" target="_blank" href="<?php echo $creative_user->linkedin ?>"><i class="fa fa-linkedin"></i></a>
 											<?php
 										}
-										if($linkedin){
+										if($creative_user->github){
 											?>
-											<a id="linkedinIcon" target="_blank" href="<?php echo $linkedin ?>"><i class="fa fa-linkedin"></i></a>
+											<a id="gitIcon" target="_blank" href="<?php echo $creative_user->github ?>"><i class="fa fa-github"></i></a>
 											<?php
 										}
-										if($git){
+										if($creative_user->personal){
 											?>
-											<a id="gitIcon" target="_blank" href="<?php echo $git ?>"><i class="fa fa-github"></i></a>
-											<?php
-										}
-										if($personal){
-											?>
-											<a id="personalIcon" target="_blank" href="<?php echo $personal ?>"><i class="fa fa-user"></i></a>
+											<a id="personalIcon" target="_blank" href="<?php echo $creative_user->personal ?>"><i class="fa fa-user"></i></a>
 											<?php
 										}
 										?>
