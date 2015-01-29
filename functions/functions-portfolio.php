@@ -105,6 +105,7 @@ function portfolio_meta_save() {
 	$input['git'] = (isset($_POST['portfolio-form-git']) ? $_POST['portfolio-form-git'] : '');
 	$input['personal'] = (isset($_POST['portfolio-form-personal']) ? $_POST['portfolio-form-personal'] : '');
 	$input['instagram'] = (isset($_POST['portfolio-form-instagram']) ? $_POST['portfolio-form-instagram'] : '');
+	$input['user-ID'] = get_current_user_id();
 
 	// $input['order'] = str_pad($input['order'], 3, "0", STR_PAD_LEFT);
 
