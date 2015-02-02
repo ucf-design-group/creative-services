@@ -105,4 +105,34 @@ get_header(); ?>
 				</div>
 			</div>
 
+<script type="text/javascript">
+	jQuery(document).ready(function(?) {
+		var busy = false;
+
+		$(window).scroll(function() {
+			if($(window).scrollTop() + $(window).height() == $(document).height() && busy == false) {
+				scrollAjax();
+			}
+		});
+
+	function scrollAjax() {
+		busy == true;
+		var existing_post_ids = [];
+		$('.item').each(function(){
+			post_ids.push($(this).data('post-id'));
+		})
+
+		$.ajax({
+			type: "GET",
+			dataType:'html',
+			url:"<?php echo (bloginfo('template_url') . 'functions/functions-infinite-scroll.php'); ?>"
+			data: {post_ids: existing_post_ids},
+			success: function(data) {
+				$('.isotope').append(data);
+			}
+		}).always(function(){ busy = false; });
+	}
+
+	});
+</script>
 <?php get_footer(); ?>
