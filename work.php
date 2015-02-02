@@ -38,7 +38,7 @@ get_header(); ?>
 							$git = get_post_meta($post->ID, 'portfolio-form-git', true);
 							$personal = get_post_meta($post->ID, 'portfolio-form-personal', true);
 							$instagram = get_post_meta($post->ID, 'portfolio-form-instagram', true);
-							$user_ID = get_post_meta($opst->ID), 'portfolio-form-user-id', true);
+							$user_ID = get_post_meta($post->ID), 'portfolio-form-user-id', true);
 
 							// Gets the current user as a user object so personal link information can be pulled appropriately.
 							$creative_user = get_user( get_current_user_id() ); ?>
