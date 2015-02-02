@@ -116,35 +116,48 @@ function custom_post_types() {
 	 * For more information on capabilities, look at: http://codex.wordpress.org/Function_Reference/register_post_type
 	*/
 
-	register_post_type('file-upload', array(
-	'labels' 			=> array(
-		'name' 			=> 'File Upload',
-		'singular_name' => 'File Upload'),
-	'public'			=> true,
-	'hierarchical'		=> false,
-	'supports' 			=> array('title', 'thumbnail', 'editor'),
+
+	// register_post_type('file-upload', array(
+	// 'labels' 			=> array(
+	// 	'name' 			=> 'File Upload',
+	// 	'singular_name' => 'File Upload'),
+	// 'public'			=> true,
+	// 'hierarchical'		=> false,
+	// 'supports' 			=> array('title', 'thumbnail', 'editor'),
 	// 'capability_type' 		=> 'upload',
 	// 'capabilities' 		=> array(
 
-	// 	/* Capabilities that will be granted to creative users */
-	// 	//'read'					=> 'read_uploads',
-	// 	//'read_post' 			=> 'read_upload',
-	// 	// 'create_posts'			=> 'create_uploads',	
-	// 	//'edit_posts' 			=> 'edit_uploads',	
-	// 	// 'publish_posts' 		=> 'publish_uploads',
- //  //       'edit_published_posts'  => "edit_published_uploads",
- //  //       'delete_published_posts'=> "delete_published_uploads",
-	// 	//'delete_posts' 			=> 'delete_uploads',
+	// // 	/* Capabilities that will be granted to creative users */
+	// 	'read'					=> 'read_uploads',
+	// 	'read_post' 			=> 'read_upload',
+	// 	'create_posts'			=> 'create_uploads',	
+	// 	'edit_posts' 			=> 'edit_uploads',	
+	// 	'publish_posts' 		=> 'publish_uploads',
+ //        'edit_published_posts'  => "edit_published_uploads",
+ //        'delete_published_posts'=> "delete_published_uploads",
+	// 	'delete_posts' 			=> 'delete_uploads',
 
 	// 	/* Capabilities that will be explicitly removed for creative users */
-	// 	// 'read_private_posts'	=> 'read_private_uploads',
-	// 	// 'edit_others_posts'	 	=> "edit_others_uploads",
-	//  //    'delete_private_posts'  => "delete_priate_uploads",
- //  //       'delete_others_posts'   => "delete_others_uploads",
- //  //       'edit_private_posts'    => "edit_private_uploads",
+	// 	'read_private_posts'	=> 'read_private_uploads',
+	// 	'edit_others_posts'	 	=> "edit_others_uploads",
+	//     'delete_private_posts'  => "delete_priate_uploads",
+ //        'delete_others_posts'   => "delete_others_uploads",
+ //        'edit_private_posts'    => "edit_private_uploads",
 	// 	),
-	'taxonomies' 		=> array('category'),
-	'has_archive' 		=> false
+	// 'taxonomies' 		=> array('category'),
+	// 'has_archive' 		=> false,
+	// ));
+
+	
+	register_post_type('portfolio', array(
+	'labels' => array(
+		'name' => 'Portfolio',
+		'singular_name' => 'Piece'),
+	'public' => true,
+	'hierarchical' => false,
+	'supports' => array('title', 'thumbnail'),
+	'taxonomies' => array('category'),
+	'has_archive' => false
 	));
 }
 add_action('init', 'custom_post_types');
@@ -198,7 +211,7 @@ function cpt_icons() {
 /* To include other collections of functions, include_once() the relevant files here. */
 
 include_once("functions/functions-nav.php");
-// include_once("functions/functions-creative-team.php"), 'editor';
+include_once("functions/functions-creative-team.php");
 include_once("functions/functions-portfolio.php");
 include_once("functions/functions-user-profile.php");
 include_once("functions/functions-user-roles.php");
