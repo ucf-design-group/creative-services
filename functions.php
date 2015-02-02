@@ -123,26 +123,26 @@ function custom_post_types() {
 	'public'			=> true,
 	'hierarchical'		=> false,
 	'supports' 			=> array('title', 'thumbnail', 'editor'),
-	'capability_type' 		=> 'upload',
-	'capabilities' 		=> array(
+	// 'capability_type' 		=> 'upload',
+	// 'capabilities' 		=> array(
 
-		/* Capabilities that will be granted to creative users */
-		//'read'					=> 'read_uploads',
-		//'read_post' 			=> 'read_upload',
-		// 'create_posts'			=> 'create_uploads',	
-		//'edit_posts' 			=> 'edit_uploads',	
-		// 'publish_posts' 		=> 'publish_uploads',
-  //       'edit_published_posts'  => "edit_published_uploads",
-  //       'delete_published_posts'=> "delete_published_uploads",
-		//'delete_posts' 			=> 'delete_uploads',
+	// 	/* Capabilities that will be granted to creative users */
+	// 	//'read'					=> 'read_uploads',
+	// 	//'read_post' 			=> 'read_upload',
+	// 	// 'create_posts'			=> 'create_uploads',	
+	// 	//'edit_posts' 			=> 'edit_uploads',	
+	// 	// 'publish_posts' 		=> 'publish_uploads',
+ //  //       'edit_published_posts'  => "edit_published_uploads",
+ //  //       'delete_published_posts'=> "delete_published_uploads",
+	// 	//'delete_posts' 			=> 'delete_uploads',
 
-		/* Capabilities that will be explicitly removed for creative users */
-		// 'read_private_posts'	=> 'read_private_uploads',
-		// 'edit_others_posts'	 	=> "edit_others_uploads",
-	 //    'delete_private_posts'  => "delete_priate_uploads",
-  //       'delete_others_posts'   => "delete_others_uploads",
-  //       'edit_private_posts'    => "edit_private_uploads",
-		),
+	// 	/* Capabilities that will be explicitly removed for creative users */
+	// 	// 'read_private_posts'	=> 'read_private_uploads',
+	// 	// 'edit_others_posts'	 	=> "edit_others_uploads",
+	//  //    'delete_private_posts'  => "delete_priate_uploads",
+ //  //       'delete_others_posts'   => "delete_others_uploads",
+ //  //       'edit_private_posts'    => "edit_private_uploads",
+	// 	),
 	'taxonomies' 		=> array('category'),
 	'has_archive' 		=> false
 	));
@@ -199,7 +199,7 @@ function cpt_icons() {
 
 include_once("functions/functions-nav.php");
 // include_once("functions/functions-creative-team.php"), 'editor';
-// include_once("functions/functions-portfolio.php");
+include_once("functions/functions-portfolio.php");
 include_once("functions/functions-user-profile.php");
 include_once("functions/functions-user-roles.php");
 include_once("functions/functions-admin-posts.php");

@@ -50,8 +50,8 @@ function add_creative_capabilities() {
 
     // This only works, because it accesses the class instance.
     // would allow the author to edit others' posts for current theme only
-    // $role->add_cap( 'read_uploads' );
-    // $role->add_cap( 'file_uploads' ); 
+    $role->add_cap( 'read_uploads' );
+    $role->add_cap( 'file_uploads' ); 
 
 }
 add_action( 'admin_init', 'add_creative_capabilities');
