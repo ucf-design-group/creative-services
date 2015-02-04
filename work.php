@@ -45,7 +45,7 @@ get_header(); ?>
 							// $user_ID = get_post_meta($post->ID), 'portfolio-form-user-id', true);
 
 							// Gets the current user as a user object so personal link information can be pulled appropriately.
-							$creative_user = get_user( get_current_user_id() ); ?>
+							$creative_user = get_userdata( $user_ID ); ?>
 
 							<div class="item <?php if($category){ if($category[0]->cat_name == 'Video'){ echo 'width2'; } } ?> <?php if($category){ echo $category[0]->cat_name; } ?>" style="background-image: url('<?php echo $image_url; ?>');">
 								<div class="itemDescription">
@@ -69,32 +69,32 @@ get_header(); ?>
 											<a id="emailIcon" target="_blank" href="mailto:<?php echo $creative_user->email ?>"><i class="fa fa-envelope"></i></a>
 											<?php
 										}*/
-										if($creative_user->twitter){
+										if($creative_user){
 											?>
 											<a id="twitterIcon" target="_blank" href="https://twitter.com/<?php echo $creative_user->twitter ?>"><i class="fa fa-twitter"></i></a>
 											<?php
 										}
-										if($creative_user->instagram){
+										if($creative_user){
 											?>
 											<a id="twitterIcon" target="_blank" href="http://instagram.com/<?php echo $creative_user->instagram ?>"><i class="fa fa-instagram"></i></a>
 											<?php
 										}
-										if($creative_user->behance){
+										if($creative_user){
 											?>
 											<a id="behanceIcon" target="_blank" href="<?php echo $creative_user->behance ?>"><i class="fa fa-behance"></i></a>
 											<?php
 										}
-										if($creative_user->linkedin){
+										if($creative_user){
 											?>
 											<a id="linkedinIcon" target="_blank" href="<?php echo $creative_user->linkedin ?>"><i class="fa fa-linkedin"></i></a>
 											<?php
 										}
-										if($creative_user->github){
+										if($creative_user){
 											?>
 											<a id="gitIcon" target="_blank" href="<?php echo $creative_user->github ?>"><i class="fa fa-github"></i></a>
 											<?php
 										}
-										if($creative_user->personal){
+										if($creative_user){
 											?>
 											<a id="personalIcon" target="_blank" href="<?php echo $creative_user->personal ?>"><i class="fa fa-user"></i></a>
 											<?php
