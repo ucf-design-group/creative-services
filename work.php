@@ -21,8 +21,9 @@ get_header(); ?>
 						$creative_users = get_users( array('role' => 'creative_member' ));
 
 						// Creates a list of all the portfolio works that have been uploaded by creative members.
-						$creativeLoop = new WP_QUERY(array('post_type' => 'portfolio', 'posts_per_page' => -1, 'orderby' =>'rand'/*meta_key*/, 'order' => 'DSC'));
+						$creativeLoop = new WP_QUERY(array('post_type' => 'portfolio', 'posts_per_page' => -1, 'orderby' => 'date', 'order' => 'DSC'));
 						while ($creativeLoop->have_posts()) {
+							// echo 'post \'' . $post->ID . '\' found! - ' . get_post_type() . sizeof($creativeLoop);
 							$creativeLoop->the_post();
 							$title = get_the_title();
 							$content = get_the_content();
@@ -39,12 +40,14 @@ get_header(); ?>
 							$personal = get_post_meta($post->ID, 'portfolio-form-personal', true);
 							$instagram = get_post_meta($post->ID, 'portfolio-form-instagram', true);
 							$user_ID = get_post_meta($post->ID, 'portfolio-form-user-id', true);
+							$image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), '400' ); 
+
 							// $user_ID = get_post_meta($post->ID), 'portfolio-form-user-id', true);
 
 							// Gets the current user as a user object so personal link information can be pulled appropriately.
 							$creative_user = get_user( get_current_user_id() ); ?>
 
-							<div class="item <?php if($category){ if($category[0]->cat_name == 'Video'){ echo 'width2'; } } ?> <?php if($category){ echo $category[0]->cat_name; } ?>" style="background-image: url('<?php echo $image_url[0]; ?>');">
+							<div class="item <?php if($category){ if($category[0]->cat_name == 'Video'){ echo 'width2'; } } ?> <?php if($category){ echo $category[0]->cat_name; } ?>" style="background-image: url('<?php echo $image_url; ?>');">
 								<div class="itemDescription">
 <?php 
 									if($category){ 
