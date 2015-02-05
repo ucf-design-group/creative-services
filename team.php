@@ -22,9 +22,14 @@ get_header(); ?>
 <?php 					
 
 				$creative_users = get_users( array('role' => 'creative_member' ));
-				foreach ( $creative_users as $creative_user ) : ?>
+				foreach ( $creative_users as $creative_user ) :
+					
+					/* Takes the creative_user's id and passes it to get_avatar_url() in functions.php to parse the image output for
+					 * the image's url which is then returned as a string which is then used to display the image as a background.
+					 */
+					$user_avatar_url = get_avatar_url ( $creative_user->ID, $size = '500' ); ?>
 
-					<article id="<?php echo $creative_user->displayname ?>" class="item <?php if($category){ echo $category[0]->cat_name; } ?>" style="background-image:url('<?php echo $image_url[0] ?>');">
+					<article id="<?php echo $creative_user->displayname ?>" class="item <?php if($category){ echo $category[0]->cat_name; } ?>" style="background-image:url('<?php echo $user_avatar_url ?>');">
 						<div class="nameHeader"><h3><?php echo $creative_user->display_name ?></h3></div>
 						<div class="itemIcons">
 

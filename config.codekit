@@ -2,24 +2,41 @@
 "CodeKitInfo": "This is a CodeKit 2.x project configuration file. It is designed to sync project settings across multiple machines. MODIFYING THE CONTENTS OF THIS FILE IS A POOR LIFE DECISION. If you do so, you will likely cause CodeKit to crash. This file is not useful unless accompanied by the project that created it in CodeKit 2. This file is not backwards-compatible with CodeKit 1.x. For more information, see: http:\/\/incident57.com\/codekit",
 "creatorBuild": "18493",
 "files": {
+<<<<<<< HEAD
 	"\/private\/404.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/private\/404.php",
+=======
+	"\/404.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/404.php",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+<<<<<<< HEAD
 	"\/private\/about.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/private\/about.php",
+=======
+	"\/about.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/about.php",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+<<<<<<< HEAD
 	"\/private\/config.rb": {
 		"fileType": 131072,
 		"ignore": 0,
@@ -34,35 +51,72 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/private\/content-page.php",
+=======
+	"\/config.rb": {
+		"fileType": 131072,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/config.rb",
+		"outputAbbreviatedPath": "\/config.rb",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/content-page.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/content-page.php",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+<<<<<<< HEAD
 	"\/private\/content-single.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/private\/content-single.php",
+=======
+	"\/content-single.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/content-single.php",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+<<<<<<< HEAD
 	"\/private\/content.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/private\/content.php",
+=======
+	"\/content.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/content.php",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+<<<<<<< HEAD
 	"\/private\/fancybox\/CHANGELOG.md": {
+=======
+	"\/fancybox\/CHANGELOG.md": {
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"enableFootnoteSupport": 0,
 		"enableSmartyPants": 1,
 		"expandTabs": 1,
 		"fileType": 4096,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
+<<<<<<< HEAD
 		"inputAbbreviatedPath": "\/private\/fancybox\/CHANGELOG.md",
 		"outputAbbreviatedPath": "\/private\/fancybox\/CHANGELOG.html",
 		"outputPathIsOutsideProject": 0,
@@ -74,407 +128,754 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/private\/fancybox\/lib\/jquery-1.10.1.min.js",
 		"outputAbbreviatedPath": "\/private\/fancybox\/lib\/min\/jquery-1.10.1.min-min.js",
+=======
+		"inputAbbreviatedPath": "\/fancybox\/CHANGELOG.md",
+		"outputAbbreviatedPath": "\/fancybox\/CHANGELOG.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/fancybox\/lib\/jquery-1.10.1.min.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/fancybox\/lib\/jquery-1.10.1.min.js",
+		"outputAbbreviatedPath": "\/fancybox\/lib\/min\/jquery-1.10.1.min-min.js",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+<<<<<<< HEAD
 	"\/private\/fancybox\/lib\/jquery-1.9.0.min.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/private\/fancybox\/lib\/jquery-1.9.0.min.js",
 		"outputAbbreviatedPath": "\/private\/fancybox\/lib\/min\/jquery-1.9.0.min-min.js",
+=======
+	"\/fancybox\/lib\/jquery-1.9.0.min.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/fancybox\/lib\/jquery-1.9.0.min.js",
+		"outputAbbreviatedPath": "\/fancybox\/lib\/min\/jquery-1.9.0.min-min.js",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+<<<<<<< HEAD
 	"\/private\/fancybox\/lib\/jquery.mousewheel-3.0.6.pack.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/private\/fancybox\/lib\/jquery.mousewheel-3.0.6.pack.js",
 		"outputAbbreviatedPath": "\/private\/fancybox\/lib\/min\/jquery.mousewheel-3.0.6.pack-min.js",
+=======
+	"\/fancybox\/lib\/jquery.mousewheel-3.0.6.pack.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/fancybox\/lib\/jquery.mousewheel-3.0.6.pack.js",
+		"outputAbbreviatedPath": "\/fancybox\/lib\/min\/jquery.mousewheel-3.0.6.pack-min.js",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+<<<<<<< HEAD
 	"\/private\/fancybox\/README.md": {
+=======
+	"\/fancybox\/README.md": {
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"enableFootnoteSupport": 0,
 		"enableSmartyPants": 1,
 		"expandTabs": 1,
 		"fileType": 4096,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
+<<<<<<< HEAD
 		"inputAbbreviatedPath": "\/private\/fancybox\/README.md",
 		"outputAbbreviatedPath": "\/private\/fancybox\/README.html",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/private\/fancybox\/source\/fancybox_overlay.png": {
+=======
+		"inputAbbreviatedPath": "\/fancybox\/README.md",
+		"outputAbbreviatedPath": "\/fancybox\/README.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/fancybox\/source\/fancybox_overlay.png": {
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 1003,
+<<<<<<< HEAD
 		"inputAbbreviatedPath": "\/private\/fancybox\/source\/fancybox_overlay.png",
 		"outputAbbreviatedPath": "\/private\/fancybox\/source\/fancybox_overlay.png",
+=======
+		"inputAbbreviatedPath": "\/fancybox\/source\/fancybox_overlay.png",
+		"outputAbbreviatedPath": "\/fancybox\/source\/fancybox_overlay.png",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+<<<<<<< HEAD
 	"\/private\/fancybox\/source\/fancybox_sprite.png": {
+=======
+	"\/fancybox\/source\/fancybox_sprite.png": {
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 1362,
+<<<<<<< HEAD
 		"inputAbbreviatedPath": "\/private\/fancybox\/source\/fancybox_sprite.png",
 		"outputAbbreviatedPath": "\/private\/fancybox\/source\/fancybox_sprite.png",
+=======
+		"inputAbbreviatedPath": "\/fancybox\/source\/fancybox_sprite.png",
+		"outputAbbreviatedPath": "\/fancybox\/source\/fancybox_sprite.png",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+<<<<<<< HEAD
 	"\/private\/fancybox\/source\/fancybox_sprite@2x.png": {
+=======
+	"\/fancybox\/source\/fancybox_sprite@2x.png": {
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 6553,
+<<<<<<< HEAD
 		"inputAbbreviatedPath": "\/private\/fancybox\/source\/fancybox_sprite@2x.png",
 		"outputAbbreviatedPath": "\/private\/fancybox\/source\/fancybox_sprite@2x.png",
+=======
+		"inputAbbreviatedPath": "\/fancybox\/source\/fancybox_sprite@2x.png",
+		"outputAbbreviatedPath": "\/fancybox\/source\/fancybox_sprite@2x.png",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+<<<<<<< HEAD
 	"\/private\/fancybox\/source\/helpers\/fancybox_buttons.png": {
+=======
+	"\/fancybox\/source\/helpers\/fancybox_buttons.png": {
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 1080,
+<<<<<<< HEAD
 		"inputAbbreviatedPath": "\/private\/fancybox\/source\/helpers\/fancybox_buttons.png",
 		"outputAbbreviatedPath": "\/private\/fancybox\/source\/helpers\/fancybox_buttons.png",
+=======
+		"inputAbbreviatedPath": "\/fancybox\/source\/helpers\/fancybox_buttons.png",
+		"outputAbbreviatedPath": "\/fancybox\/source\/helpers\/fancybox_buttons.png",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+<<<<<<< HEAD
 	"\/private\/fancybox\/source\/helpers\/jquery.fancybox-buttons.css": {
 		"fileType": 16,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/private\/fancybox\/source\/helpers\/jquery.fancybox-buttons.css",
+=======
+	"\/fancybox\/source\/helpers\/jquery.fancybox-buttons.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/fancybox\/source\/helpers\/jquery.fancybox-buttons.css",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+<<<<<<< HEAD
 	"\/private\/fancybox\/source\/helpers\/jquery.fancybox-buttons.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/private\/fancybox\/source\/helpers\/jquery.fancybox-buttons.js",
 		"outputAbbreviatedPath": "\/private\/fancybox\/source\/helpers\/min\/jquery.fancybox-buttons-min.js",
+=======
+	"\/fancybox\/source\/helpers\/jquery.fancybox-buttons.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/fancybox\/source\/helpers\/jquery.fancybox-buttons.js",
+		"outputAbbreviatedPath": "\/fancybox\/source\/helpers\/min\/jquery.fancybox-buttons-min.js",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+<<<<<<< HEAD
 	"\/private\/fancybox\/source\/helpers\/jquery.fancybox-media.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/private\/fancybox\/source\/helpers\/jquery.fancybox-media.js",
 		"outputAbbreviatedPath": "\/private\/fancybox\/source\/helpers\/min\/jquery.fancybox-media-min.js",
+=======
+	"\/fancybox\/source\/helpers\/jquery.fancybox-media.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/fancybox\/source\/helpers\/jquery.fancybox-media.js",
+		"outputAbbreviatedPath": "\/fancybox\/source\/helpers\/min\/jquery.fancybox-media-min.js",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+<<<<<<< HEAD
 	"\/private\/fancybox\/source\/helpers\/jquery.fancybox-thumbs.css": {
 		"fileType": 16,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/private\/fancybox\/source\/helpers\/jquery.fancybox-thumbs.css",
+=======
+	"\/fancybox\/source\/helpers\/jquery.fancybox-thumbs.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/fancybox\/source\/helpers\/jquery.fancybox-thumbs.css",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+<<<<<<< HEAD
 	"\/private\/fancybox\/source\/helpers\/jquery.fancybox-thumbs.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/private\/fancybox\/source\/helpers\/jquery.fancybox-thumbs.js",
 		"outputAbbreviatedPath": "\/private\/fancybox\/source\/helpers\/min\/jquery.fancybox-thumbs-min.js",
+=======
+	"\/fancybox\/source\/helpers\/jquery.fancybox-thumbs.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/fancybox\/source\/helpers\/jquery.fancybox-thumbs.js",
+		"outputAbbreviatedPath": "\/fancybox\/source\/helpers\/min\/jquery.fancybox-thumbs-min.js",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+<<<<<<< HEAD
 	"\/private\/fancybox\/source\/jquery.fancybox.css": {
 		"fileType": 16,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/private\/fancybox\/source\/jquery.fancybox.css",
+=======
+	"\/fancybox\/source\/jquery.fancybox.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/fancybox\/source\/jquery.fancybox.css",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+<<<<<<< HEAD
 	"\/private\/fancybox\/source\/jquery.fancybox.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/private\/fancybox\/source\/jquery.fancybox.js",
 		"outputAbbreviatedPath": "\/private\/fancybox\/source\/min\/jquery.fancybox-min.js",
+=======
+	"\/fancybox\/source\/jquery.fancybox.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/fancybox\/source\/jquery.fancybox.js",
+		"outputAbbreviatedPath": "\/fancybox\/source\/min\/jquery.fancybox-min.js",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+<<<<<<< HEAD
 	"\/private\/fancybox\/source\/jquery.fancybox.pack.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/private\/fancybox\/source\/jquery.fancybox.pack.js",
 		"outputAbbreviatedPath": "\/private\/fancybox\/source\/min\/jquery.fancybox.pack-min.js",
+=======
+	"\/fancybox\/source\/jquery.fancybox.pack.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/fancybox\/source\/jquery.fancybox.pack.js",
+		"outputAbbreviatedPath": "\/fancybox\/source\/min\/jquery.fancybox.pack-min.js",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+<<<<<<< HEAD
 	"\/private\/footer.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/private\/footer.php",
+=======
+	"\/footer.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/footer.php",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+<<<<<<< HEAD
 	"\/private\/functions.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/private\/functions.php",
+=======
+	"\/functions.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/functions.php",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+<<<<<<< HEAD
 	"\/private\/functions\/functions-admin-posts.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/private\/functions\/functions-admin-posts.php",
+=======
+	"\/functions\/functions-admin-posts.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/functions\/functions-admin-posts.php",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+<<<<<<< HEAD
 	"\/private\/functions\/functions-creative-team.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/private\/functions\/functions-creative-team.php",
+=======
+	"\/functions\/functions-creative-team.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/functions\/functions-creative-team.php",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+<<<<<<< HEAD
 	"\/private\/functions\/functions-nav.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/private\/functions\/functions-nav.php",
+=======
+	"\/functions\/functions-nav.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/functions\/functions-nav.php",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+<<<<<<< HEAD
 	"\/private\/functions\/functions-portfolio.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/private\/functions\/functions-portfolio.php",
+=======
+	"\/functions\/functions-portfolio.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/functions\/functions-portfolio.php",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+<<<<<<< HEAD
 	"\/private\/functions\/functions-user-profile.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/private\/functions\/functions-user-profile.php",
+=======
+	"\/functions\/functions-user-profile.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/functions\/functions-user-profile.php",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+<<<<<<< HEAD
 	"\/private\/functions\/functions-user-roles.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/private\/functions\/functions-user-roles.php",
+=======
+	"\/functions\/functions-user-roles.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/functions\/functions-user-roles.php",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+<<<<<<< HEAD
 	"\/private\/header.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/private\/header.php",
+=======
+	"\/header.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/header.php",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+<<<<<<< HEAD
 	"\/private\/home.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/private\/home.php",
+=======
+	"\/home.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/home.php",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+<<<<<<< HEAD
 	"\/private\/index.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/private\/index.php",
+=======
+	"\/index.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/index.php",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+<<<<<<< HEAD
 	"\/private\/js\/html5.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/private\/js\/html5.js",
 		"outputAbbreviatedPath": "\/private\/js\/min\/html5-min.js",
+=======
+	"\/js\/html5.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/html5.js",
+		"outputAbbreviatedPath": "\/js\/min\/html5-min.js",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+<<<<<<< HEAD
 	"\/private\/js\/isotope.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/private\/js\/isotope.js",
 		"outputAbbreviatedPath": "\/private\/js\/min\/isotope-min.js",
+=======
+	"\/js\/isotope.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/isotope.js",
+		"outputAbbreviatedPath": "\/js\/min\/isotope-min.js",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+<<<<<<< HEAD
 	"\/private\/js\/main.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/private\/js\/main.js",
 		"outputAbbreviatedPath": "\/private\/js\/min\/main-min.js",
+=======
+	"\/js\/main.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/main.js",
+		"outputAbbreviatedPath": "\/js\/min\/main-min.js",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+<<<<<<< HEAD
 	"\/private\/js\/packery.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/private\/js\/packery.js",
 		"outputAbbreviatedPath": "\/private\/js\/min\/packery-min.js",
+=======
+	"\/js\/packery.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/packery.js",
+		"outputAbbreviatedPath": "\/js\/min\/packery-min.js",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+<<<<<<< HEAD
 	"\/private\/no-results.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/private\/no-results.php",
+=======
+	"\/no-results.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/no-results.php",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+<<<<<<< HEAD
 	"\/private\/page.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/private\/page.php",
+=======
+	"\/page.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/page.php",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+<<<<<<< HEAD
 	"\/private\/README.md": {
+=======
+	"\/README.md": {
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"enableFootnoteSupport": 0,
 		"enableSmartyPants": 1,
 		"expandTabs": 1,
 		"fileType": 4096,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
+<<<<<<< HEAD
 		"inputAbbreviatedPath": "\/private\/README.md",
 		"outputAbbreviatedPath": "\/private\/README.html",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/private\/resources\/CSlogo.png": {
+=======
+		"inputAbbreviatedPath": "\/README.md",
+		"outputAbbreviatedPath": "\/README.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/resources\/CSlogo.png": {
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 20164,
+<<<<<<< HEAD
 		"inputAbbreviatedPath": "\/private\/resources\/CSlogo.png",
 		"outputAbbreviatedPath": "\/private\/resources\/CSlogo.png",
+=======
+		"inputAbbreviatedPath": "\/resources\/CSlogo.png",
+		"outputAbbreviatedPath": "\/resources\/CSlogo.png",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+<<<<<<< HEAD
 	"\/private\/resources\/cubes_@2X.png": {
+=======
+	"\/resources\/cubes_@2X.png": {
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 2941,
+<<<<<<< HEAD
 		"inputAbbreviatedPath": "\/private\/resources\/cubes_@2X.png",
 		"outputAbbreviatedPath": "\/private\/resources\/cubes_@2X.png",
+=======
+		"inputAbbreviatedPath": "\/resources\/cubes_@2X.png",
+		"outputAbbreviatedPath": "\/resources\/cubes_@2X.png",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+<<<<<<< HEAD
 	"\/private\/resources\/cubes_@2XO.png": {
+=======
+	"\/resources\/cubes_@2XO.png": {
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 3090,
+<<<<<<< HEAD
 		"inputAbbreviatedPath": "\/private\/resources\/cubes_@2XO.png",
 		"outputAbbreviatedPath": "\/private\/resources\/cubes_@2XO.png",
+=======
+		"inputAbbreviatedPath": "\/resources\/cubes_@2XO.png",
+		"outputAbbreviatedPath": "\/resources\/cubes_@2XO.png",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+<<<<<<< HEAD
 	"\/private\/resources\/logos.png": {
+=======
+	"\/resources\/logos.png": {
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 90933,
+<<<<<<< HEAD
 		"inputAbbreviatedPath": "\/private\/resources\/logos.png",
 		"outputAbbreviatedPath": "\/private\/resources\/logos.png",
+=======
+		"inputAbbreviatedPath": "\/resources\/logos.png",
+		"outputAbbreviatedPath": "\/resources\/logos.png",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+<<<<<<< HEAD
 	"\/private\/resources\/office.jpg": {
+=======
+	"\/resources\/office.jpg": {
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 2.01674e+06,
+<<<<<<< HEAD
 		"inputAbbreviatedPath": "\/private\/resources\/office.jpg",
 		"outputAbbreviatedPath": "\/private\/resources\/office.jpg",
+=======
+		"inputAbbreviatedPath": "\/resources\/office.jpg",
+		"outputAbbreviatedPath": "\/resources\/office.jpg",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+<<<<<<< HEAD
 	"\/private\/sass\/about.sass": {
+=======
+	"\/sass\/about.sass": {
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 2,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
+<<<<<<< HEAD
 		"inputAbbreviatedPath": "\/private\/sass\/about.sass",
+=======
+		"inputAbbreviatedPath": "\/sass\/about.sass",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputAbbreviatedPath": "\/about.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
@@ -483,14 +884,22 @@
 		"shouldRunBless": 0,
 		"useLibsass": false
 		},
+<<<<<<< HEAD
 	"\/private\/sass\/footer.sass": {
+=======
+	"\/sass\/footer.sass": {
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 2,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
+<<<<<<< HEAD
 		"inputAbbreviatedPath": "\/private\/sass\/footer.sass",
+=======
+		"inputAbbreviatedPath": "\/sass\/footer.sass",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputAbbreviatedPath": "\/footer.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
@@ -499,14 +908,22 @@
 		"shouldRunBless": 0,
 		"useLibsass": false
 		},
+<<<<<<< HEAD
 	"\/private\/sass\/home.sass": {
+=======
+	"\/sass\/home.sass": {
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 2,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
+<<<<<<< HEAD
 		"inputAbbreviatedPath": "\/private\/sass\/home.sass",
+=======
+		"inputAbbreviatedPath": "\/sass\/home.sass",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputAbbreviatedPath": "\/home.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
@@ -515,14 +932,22 @@
 		"shouldRunBless": 0,
 		"useLibsass": false
 		},
+<<<<<<< HEAD
 	"\/private\/sass\/menu.sass": {
+=======
+	"\/sass\/menu.sass": {
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 2,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
+<<<<<<< HEAD
 		"inputAbbreviatedPath": "\/private\/sass\/menu.sass",
+=======
+		"inputAbbreviatedPath": "\/sass\/menu.sass",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputAbbreviatedPath": "\/menu.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
@@ -531,14 +956,22 @@
 		"shouldRunBless": 0,
 		"useLibsass": false
 		},
+<<<<<<< HEAD
 	"\/private\/sass\/reset.scss": {
+=======
+	"\/sass\/reset.scss": {
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
+<<<<<<< HEAD
 		"inputAbbreviatedPath": "\/private\/sass\/reset.scss",
+=======
+		"inputAbbreviatedPath": "\/sass\/reset.scss",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputAbbreviatedPath": "\/reset.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
@@ -547,14 +980,22 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
+<<<<<<< HEAD
 	"\/private\/sass\/style.sass": {
+=======
+	"\/sass\/style.sass": {
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 2,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
+<<<<<<< HEAD
 		"inputAbbreviatedPath": "\/private\/sass\/style.sass",
+=======
+		"inputAbbreviatedPath": "\/sass\/style.sass",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputAbbreviatedPath": "\/style.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
@@ -563,14 +1004,22 @@
 		"shouldRunBless": 0,
 		"useLibsass": false
 		},
+<<<<<<< HEAD
 	"\/private\/sass\/team.sass": {
+=======
+	"\/sass\/team.sass": {
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 2,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
+<<<<<<< HEAD
 		"inputAbbreviatedPath": "\/private\/sass\/team.sass",
+=======
+		"inputAbbreviatedPath": "\/sass\/team.sass",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputAbbreviatedPath": "\/team.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
@@ -579,14 +1028,22 @@
 		"shouldRunBless": 0,
 		"useLibsass": false
 		},
+<<<<<<< HEAD
 	"\/private\/sass\/variables.sass": {
+=======
+	"\/sass\/variables.sass": {
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 2,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
+<<<<<<< HEAD
 		"inputAbbreviatedPath": "\/private\/sass\/variables.sass",
+=======
+		"inputAbbreviatedPath": "\/sass\/variables.sass",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputAbbreviatedPath": "\/variables.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
@@ -595,14 +1052,22 @@
 		"shouldRunBless": 0,
 		"useLibsass": false
 		},
+<<<<<<< HEAD
 	"\/private\/sass\/work.sass": {
+=======
+	"\/sass\/work.sass": {
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 2,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
+<<<<<<< HEAD
 		"inputAbbreviatedPath": "\/private\/sass\/work.sass",
+=======
+		"inputAbbreviatedPath": "\/sass\/work.sass",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputAbbreviatedPath": "\/work.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
@@ -611,6 +1076,7 @@
 		"shouldRunBless": 0,
 		"useLibsass": false
 		},
+<<<<<<< HEAD
 	"\/private\/screenshot.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -618,37 +1084,71 @@
 		"initialSize": 1.63795e+06,
 		"inputAbbreviatedPath": "\/private\/screenshot.png",
 		"outputAbbreviatedPath": "\/private\/screenshot.png",
+=======
+	"\/screenshot.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 717784,
+		"inputAbbreviatedPath": "\/screenshot.png",
+		"outputAbbreviatedPath": "\/screenshot.png",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+<<<<<<< HEAD
 	"\/private\/search.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/private\/search.php",
+=======
+	"\/search.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/search.php",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+<<<<<<< HEAD
 	"\/private\/searchform.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/private\/searchform.php",
+=======
+	"\/searchform.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/searchform.php",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+<<<<<<< HEAD
 	"\/private\/single.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/private\/single.php",
+=======
+	"\/single.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/single.php",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+<<<<<<< HEAD
 	"\/private\/style.css": {
 		"fileType": 16,
 		"ignore": 0,
@@ -663,24 +1163,47 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/private\/team.php",
+=======
+	"\/team.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/team.php",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+<<<<<<< HEAD
 	"\/private\/template.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/private\/template.php",
+=======
+	"\/template.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/template.php",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+<<<<<<< HEAD
 	"\/private\/work.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/private\/work.php",
+=======
+	"\/work.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/work.php",
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -694,8 +1217,13 @@
 "projectAttributes": {
 	"bowerAbbreviatedPath": "",
 	"displayValue": "creative-services",
+<<<<<<< HEAD
 	"displayValueWasSetByUser": 1,
 	"iconImageName": "brackets_brown"
+=======
+	"displayValueWasSetByUser": 0,
+	"iconImageName": "globe_darkGray"
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 	},
 "projectSettings": {
 	"alwaysUseExternalServer": 0,

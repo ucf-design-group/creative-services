@@ -203,7 +203,12 @@ nav.main-menu.compact {
   width: 450px;
   margin: 0 auto;
   display: block;
+<<<<<<< HEAD
   padding-top: 1%; }
+=======
+  padding-top: 1%;
+  cursor: pointer; }
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 
 body {
   background-image: url("resources/cubes_@2X");
@@ -285,7 +290,11 @@ footer {
     background-size: 615.38462%;
     width: 16.25%; } }
 .page-home {
+<<<<<<< HEAD
   background-image: url("resources/cubes_@2X");
+=======
+  background-image: url("resources/cubes_@2Xv2");
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
   background-color: #5a77aa; }
   .page-home .content-area {
     padding: 6.5% 0 0 0; }
@@ -361,6 +370,10 @@ footer {
     padding: 5px 0;
     width: 50%; } }
 .page-work {
+<<<<<<< HEAD
+=======
+  background-image: url("resources/cubes_@2Xv2");
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
   /* clearfix */ }
   .page-work .content-area {
     padding: 0 100px 4% 100px; }
@@ -502,6 +515,10 @@ footer {
   .page-work .creative-work {
     padding: 10px 0 3%; } }
 .page-team {
+<<<<<<< HEAD
+=======
+  background-image: url("resources/cubes_@2Xv2");
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
   /* clearfix */ }
   .page-team .creative-team {
     width: 100%;
@@ -620,6 +637,7 @@ footer {
     width: 100%; }
   .page-team .creative-team {
     padding: 10px 0 3%; } }
+<<<<<<< HEAD
 .page-about .aboutImage {
   background-image: url("resources/office.jpg");
   background-size: cover;
@@ -646,6 +664,36 @@ footer {
     font-family: "gotham";
     position: relative;
     top: 34%; }
+=======
+.page-about {
+  background-image: url("resources/cubes_@2Xv2"); }
+  .page-about .aboutImage {
+    background-image: url("resources/office.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 650px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 2em; }
+    .page-about .aboutImage h1 {
+      font-size: 4.2em;
+      color: white;
+      display: block;
+      font-family: "gotham-med";
+      position: relative;
+      top: 34%; }
+    .page-about .aboutImage p {
+      font-size: 1.8em;
+      font-weight: 300;
+      max-width: 890px;
+      width: 100%;
+      margin: 0.5% auto;
+      color: #f0f0f0;
+      font-family: "gotham";
+      position: relative;
+      top: 34%; }
+>>>>>>> d489778c8da1a227e0bc0c715abaa99b98085e90
 
 @media screen and (max-width: 500px) {
   .page-about .content-area {
