@@ -40,8 +40,7 @@ get_header(); ?>
 							$personal = get_post_meta($post->ID, 'portfolio-form-personal', true);
 							$instagram = get_post_meta($post->ID, 'portfolio-form-instagram', true);
 							$user_ID = get_post_meta($post->ID, 'portfolio-form-user-id', true);
-							$image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), '400' ); 
-
+							$image_url = wp_get_attachment_url( get_post_thumbnail_id($post->ID), '100');
 							// $user_ID = get_post_meta($post->ID), 'portfolio-form-user-id', true);
 
 							// Gets the current user as a user object so personal link information can be pulled appropriately.
