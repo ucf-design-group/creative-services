@@ -23,15 +23,15 @@
 	<body <?php echo $body_class; ?>>
 		<div class="page">
 
-		 	<div class="content-area">
+		 	<div class="content-area" style="padding-top: 6.5%; height: 1055px;">
 				<div class="logoSection">
 					<img class="CSlogo" src="<?php echo get_stylesheet_directory_uri(); ?>/resources/CSlogo.png" alt="Creative Services Logo">
 				</div>
-				<div class="homeNav">
+				<!-- <div class="homeNav">
 					<a href="<?php echo get_site_url(); ?>/work">Work</a>
 					<a href="<?php echo get_site_url(); ?>/team">Team</a>
 					<a href="<?php echo get_site_url(); ?>/about">About</a>
-				</div>
+				</div> -->
 				<h3 style="width:100%; text-align:center; font-size:30px; color:white;">Apply for Design Group <a href="https://ucf.collegiatelink.net/form/start/60179">Here!</a></h3>
 			</div>
 			
