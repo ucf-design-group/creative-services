@@ -3,8 +3,8 @@ get_header(); ?>
 
 			<div class="content-area">
 			<div class="aboutImage">
-				<h1>Something should go here.</h1>
-				<p>Some more things should be going here, maybe something about what exactly we do here in the OSI Creative Services. Not too many lines of text but just enough to get the point across, you know?</p>
+				<h1>We are Design Group.</h1>
+				<p> Do you know those posters for awesome events that occur around campus? Or those fun teaser videos for upcoming races or dances? Yeah, we make those. We team up with other agenicies in the Office of Student Involvement to create great experiences for UCF.</p>
 			</div>
 				<div class="main">
 					<?php
