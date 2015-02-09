@@ -11,12 +11,13 @@ get_header(); ?>
 			} ?>
 		</div>
 		<section class="creative-team">
-			<form action="post" name="positionSwap">
+		<!-- Commented out until functionality returns -->
+		<!-- 	<form action="post" name="positionSwap">
 				<input type="radio" name="position[]" value="Graphics" id="graphics" onclick="selectionListener();"/><label for="graphics">Graphics</label>
 				<input type="radio" name="position[]" value="Web" id="web" onclick="selectionListener();"/><label for="web">Web</label>
 				<input type="radio" name="position[]" value="Productions" id="productions" onclick="selectionListener();"/><label for="productions">Productions</label>
 				<input type="radio" name="position[]" value="All" id="all" checked="checked" onclick="selectionListener();"/><label for="all">All</label>
-			</form>
+			</form> -->
 			<div class="isotope">
 
 <?php 					
