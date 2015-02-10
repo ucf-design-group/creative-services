@@ -9,19 +9,19 @@ get_header(); ?>
 						get_template_part( 'content', 'single' );
 					} ?>
 				</div>
-				<form action="post" name="positionSwap">
+				<!--<form action="post" name="positionSwap">
 					<input type="radio" name="position[]" value="Graphics" id="graphics" onclick="selectionListener();"/><label for="graphics">Graphics</label>
 					<input type="radio" name="position[]" value="Web" id="web" onclick="selectionListener();"/><label for="web">Web</label>
 					<input type="radio" name="position[]" value="Productions" id="productions" onclick="selectionListener();"/><label for="productions">Productions</label>
 					<input type="radio" name="position[]" value="All" id="all" checked="checked" onclick="selectionListener();"/><label for="all">All</label>
-				</form>
+				</form>-->
 				<div class="isotope">
 <?php
 						// Gets a list of all the creative users (users with the role 'creative_member').
 						$creative_users = get_users( array('role' => 'creative_member' ));
 
 						// Creates a list of all the portfolio works that have been uploaded by creative members.
-						$creativeLoop = new WP_QUERY(array('post_type' => 'portfolio', 'posts_per_page' => -1, 'orderby' => 'date', 'order' => 'DSC'));
+						$creativeLoop = new WP_QUERY(array('post_type' => 'portfolio', 'posts_per_page' => 32, 'orderby' => 'rand', 'order' => 'DSC'));
 						while ($creativeLoop->have_posts()) {
 							// echo 'post \'' . $post->ID . '\' found! - ' . get_post_type() . sizeof($creativeLoop);
 							$creativeLoop->the_post();
