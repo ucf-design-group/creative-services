@@ -6,7 +6,7 @@
 				<a class="ucf" href="http://ucf.edu/">UCF</a>
 				<a class="sga" href="http://sga.ucf.edu/">SGA</a>
 				<a class="osi" href="http://osi.ucf.edu/">OSI</a>
-				<a class="dg" href="http://osi.ucf.edu/design-group/">Design Group</a>
+				<a class="dg" href="http://osi.ucf.edu/creativeservices/">Design Group</a>
 			</p>
 			<!-- Set the backgrounds of each anchor with logo image sprite so it's one HTTP request, use Sass -->
 			<p>
