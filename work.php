@@ -54,7 +54,7 @@ get_header(); ?>
 											<a id="expandIcon" class="fancybox-media" href="<?php echo $vimeo ?>"><i class="fa fa-expand"></i></a>
 <?php
 										} else { ?>
-												<a id="expandIcon" class="fancybox" rel="group" href="<?php echo $image_url[0]; ?>"><i class="fa fa-expand"></i></a>
+												<a id="expandIcon" class="fancybox" rel="group" href="<?php echo $image_url; ?>"><i class="fa fa-expand"></i></a>
 <?php
 										} 
 									} ?>
