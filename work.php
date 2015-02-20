@@ -149,7 +149,7 @@ get_header(); ?>
 		// initialize empty array
 		var existing_post_ids = [];
 		
-		// Push new items into empty array
+		// Push items to the div.
 		$('.single-post-wrapper').each(function(){
 			post_ids.push($(this).data('post-id'));
 		})
@@ -158,7 +158,7 @@ get_header(); ?>
 		$.ajax({
 			type: "GET",
 			dataType:'html',
-			url:"<?php echo (bloginfo('template_url') . '/infinite_scroll.php'); ?>"
+			url:"<?php echo (bloginfo('template_url') . '/infinite-scroll.php'); ?>"
 			data: {post_ids: existing_post_ids},
 			success: function(data) {
 				$('.posts-wrapper').append(data);
