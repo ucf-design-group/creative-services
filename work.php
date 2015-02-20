@@ -21,11 +21,11 @@ get_header(); ?>
 						$creative_users = get_users( array('role' => 'creative_member' ));
 
 						// Creates a list of all the portfolio works that have been uploaded by creative members.
-<<<<<<< HEAD
+
 						$creativeLoop = new WP_QUERY(array('post_type' => 'portfolio', 'posts_per_page' => 10, 'orderby' => 'date', 'order' => 'DSC'));
-=======
+
 						$creativeLoop = new WP_QUERY(array('post_type' => 'portfolio', 'posts_per_page' => -1, 'orderby' => 'rand', 'order' => 'DSC'));
->>>>>>> 043d7bcf5304a1bb5b20c8063bc26f29ffa7e275
+
 						while ($creativeLoop->have_posts()) {
 							// echo 'post \'' . $post->ID . '\' found! - ' . get_post_type() . sizeof($creativeLoop);
 							$creativeLoop->the_post();
