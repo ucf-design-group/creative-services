@@ -12,7 +12,6 @@ $content = '';
 /* Get the posts and add it into $content.  */
 if ($creativeLoop -> has_posts()) : while ($creativeLoop -> has_posts()) : $creativeLoop -> the_post;
 	$content .= "<div data-post-id = ' " . get_the_id() . " ' class = 'single-post-wrapper'>";
-	$content .= get_the_excerpt();
 	$content .= "</div>";
 endwhile; endif; wp_reset_query();
 
