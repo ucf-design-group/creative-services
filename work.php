@@ -9,19 +9,23 @@ get_header(); ?>
 						get_template_part( 'content', 'single' );
 					} ?>
 				</div>
-				<!--<form action="post" name="positionSwap">
+				<form action="post" name="positionSwap">
 					<input type="radio" name="position[]" value="Graphics" id="graphics" onclick="selectionListener();"/><label for="graphics">Graphics</label>
 					<input type="radio" name="position[]" value="Web" id="web" onclick="selectionListener();"/><label for="web">Web</label>
 					<input type="radio" name="position[]" value="Productions" id="productions" onclick="selectionListener();"/><label for="productions">Productions</label>
 					<input type="radio" name="position[]" value="All" id="all" checked="checked" onclick="selectionListener();"/><label for="all">All</label>
-				</form>-->
+				</form>-
 				<div class="isotope">
 <?php
 						// Gets a list of all the creative users (users with the role 'creative_member').
 						$creative_users = get_users( array('role' => 'creative_member' ));
 
 						// Creates a list of all the portfolio works that have been uploaded by creative members.
+<<<<<<< HEAD
+						$creativeLoop = new WP_QUERY(array('post_type' => 'portfolio', 'posts_per_page' => 10, 'orderby' => 'date', 'order' => 'DSC'));
+=======
 						$creativeLoop = new WP_QUERY(array('post_type' => 'portfolio', 'posts_per_page' => -1, 'orderby' => 'rand', 'order' => 'DSC'));
+>>>>>>> 043d7bcf5304a1bb5b20c8063bc26f29ffa7e275
 						while ($creativeLoop->have_posts()) {
 							// echo 'post \'' . $post->ID . '\' found! - ' . get_post_type() . sizeof($creativeLoop);
 							$creativeLoop->the_post();
@@ -106,12 +110,32 @@ get_header(); ?>
 <?php 				}
 ?>
 				</div>
+			
+				<!-- Div to contain the posts that will be added. -->
+				<div class="posts-wrapper">
+
+					<?php if (have_posts()):while(have_posts()):the_post(); ?>
+
+						<div data-post-id="<?php echo get_the_id(); ?>" class="single-post-wrapper">
+
+						</div>
+
+					<?php endwhile; endif; ?>
+
+				</div>
+				<!-- end -->
+
 			</div>
 
 <script type="text/javascript">
+
+
+	// When document has loaded:
 	jQuery(document).ready(function(?) {
+	
 		var busy = false;
 
+		// Function to determine if the browser hits the bottom of the page:
 		$(window).scroll(function() {
 			if($(window).scrollTop() + $(window).height() == $(document).height() && busy == false) {
 				scrollAjax();
@@ -119,19 +143,25 @@ get_header(); ?>
 		});
 
 	function scrollAjax() {
+		
 		busy == true;
+		
+		// initialize empty array
 		var existing_post_ids = [];
-		$('.item').each(function(){
+		
+		// Push new items into empty array
+		$('.single-post-wrapper').each(function(){
 			post_ids.push($(this).data('post-id'));
 		})
 
+		// Ajax function to retrieve JSON data:
 		$.ajax({
 			type: "GET",
 			dataType:'html',
-			url:"<?php echo (bloginfo('template_url') . 'functions/functions-infinite-scroll.php'); ?>"
+			url:"<?php echo (bloginfo('template_url') . '/infinite_scroll.php'); ?>"
 			data: {post_ids: existing_post_ids},
 			success: function(data) {
-				$('.isotope').append(data);
+				$('.posts-wrapper').append(data);
 			}
 		}).always(function(){ busy = false; });
 	}
