@@ -1,6 +1,6 @@
 <?php
 
-$post_ids = $_GET['post_ids'];
+$post_ids = $_GET["post_ids"];
 
 
 /* Query for the posts. */

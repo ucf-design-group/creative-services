@@ -24,7 +24,7 @@ get_header(); ?>
 
 						$creativeLoop = new WP_QUERY(array('post_type' => 'portfolio', 'posts_per_page' => 10, 'orderby' => 'date', 'order' => 'DSC'));
 
-						$creativeLoop = new WP_QUERY(array('post_type' => 'portfolio', 'posts_per_page' => -1, 'orderby' => 'rand', 'order' => 'DSC'));
+						//$creativeLoop = new WP_QUERY(array('post_type' => 'portfolio', 'posts_per_page' => -1, 'orderby' => 'rand', 'order' => 'DSC'));
 
 						while ($creativeLoop->have_posts()) {
 							// echo 'post \'' . $post->ID . '\' found! - ' . get_post_type() . sizeof($creativeLoop);
@@ -127,10 +127,8 @@ get_header(); ?>
 
 			</div>
 
-<script type="text/javascript">
+<script type="text/javascript" src="js/jquery-1.11.2.js">
 
-
-	// When document has loaded:
 	jQuery(document).ready(function(?) {
 	
 		var busy = false;
