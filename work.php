@@ -9,12 +9,12 @@ get_header(); ?>
 						get_template_part( 'content', 'single' );
 					} ?>
 				</div>
-				<form action="post" name="positionSwap">
+				<!--<form action="post" name="positionSwap">
 					<input type="radio" name="position[]" value="Graphics" id="graphics" onclick="selectionListener();"/><label for="graphics">Graphics</label>
 					<input type="radio" name="position[]" value="Web" id="web" onclick="selectionListener();"/><label for="web">Web</label>
 					<input type="radio" name="position[]" value="Productions" id="productions" onclick="selectionListener();"/><label for="productions">Productions</label>
 					<input type="radio" name="position[]" value="All" id="all" checked="checked" onclick="selectionListener();"/><label for="all">All</label>
-				</form>-
+				</form> -->
 				<div class="isotope">
 <?php
 						// Gets a list of all the creative users (users with the role 'creative_member').
@@ -22,7 +22,7 @@ get_header(); ?>
 
 						// Creates a list of all the portfolio works that have been uploaded by creative members.
 
-						$creativeLoop = new WP_QUERY(array('post_type' => 'portfolio', 'posts_per_page' => 10, 'orderby' => 'date', 'order' => 'DSC'));
+						$creativeLoop = new WP_QUERY(array('post_type' => 'portfolio', 'posts_per_page' => 12, 'orderby' => 'date', 'order' => 'DSC'));
 
 						//$creativeLoop = new WP_QUERY(array('post_type' => 'portfolio', 'posts_per_page' => -1, 'orderby' => 'rand', 'order' => 'DSC'));
 
@@ -33,7 +33,7 @@ get_header(); ?>
 							$content = get_the_content();
 							$category = get_the_category(); 
 							$image = get_the_post_thumbnail($post->ID, 'full');
-							$image_url = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'full');
+							//$image_url = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'full');
 							$name = get_post_meta($post->ID, 'portfolio-form-name', true);
 							$linkedin = get_post_meta($post->ID, 'portfolio-form-linkedin', true);
 							$email = get_post_meta($post->ID, 'portfolio-form-email', true);
@@ -112,17 +112,11 @@ get_header(); ?>
 				</div>
 			
 				<!-- Div to contain the posts that will be added. -->
-				<div class="posts-wrapper">
-
-					<?php if (have_posts()):while(have_posts()):the_post(); ?>
-
-						<div data-post-id="<?php echo get_the_id(); ?>" class="single-post-wrapper">
-
-						</div>
-
-					<?php endwhile; endif; ?>
-
+				<div id="more"> Loading More Content </div>
+				<div id="no-more"> No More Content </div>
+				<div id="result" class="item">
 				</div>
+
 				<!-- end -->
 
 			</div>
@@ -159,7 +153,7 @@ get_header(); ?>
 			url:"<?php echo (bloginfo('template_url') . '/infinite-scroll.php'); ?>"
 			data: {post_ids: existing_post_ids},
 			success: function(data) {
-				$('.posts-wrapper').append(data);
+				$('#result').append(data);
 			}
 		}).always(function(){ busy = false; });
 	}
