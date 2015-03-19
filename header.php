@@ -26,6 +26,11 @@
 		$body_class = "";
 ?>
 	<body <?php echo $body_class; ?>>
+
+		
+		<?php include_once( // Include Google Analytics Tracking 
+		'analyticstracking.php' ); ?>
+		
 		<div class="page">
 			<header>
 				<nav class="main-menu full">
