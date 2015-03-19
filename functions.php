@@ -42,62 +42,47 @@ function remove_menus() {
 	$user = wp_get_current_user();
 	// if ($user->wp_capabilities['Administrator'] != 1) {
 
-			// remove_submenu_page('index.php', 'update-core.php');
-		//remove_menu_page('edit.php?post_type=page');
-			//remove_submenu_page('edit.php', 'post-new.php?post_type=page');
-		//remove_menu_page('themes.php');
-			//remove_submenu_page('themes.php', 'widgets.php');
-			//remove_submenu_page('themes.php', 'nav-menus.php');
-			//remove_submenu_page('themes.php', 'theme-editor.php');
-		// remove_menu_page('plugins.php');
-			// remove_submenu_page('plugins.php', 'plugin-install.php');
+			remove_submenu_page('index.php', 'update-core.php');
+		remove_menu_page( 'edit.php' );
+			remove_submenu_page( 'edit.php', 'post-new.php' );
+			remove_submenu_page( 'edit.php', 'edit-tags.php?taxonomy=category' );
+			remove_submenu_page( 'edit.php', 'edit-tags.php?taxonomy=post_tag' );
+		remove_menu_page( 'upload.php' );
+		remove_menu_page('edit.php?post_type=page');
+			remove_submenu_page('edit.php', 'post-new.php?post_type=page');
+		remove_menu_page('edit-comments.php');
+		remove_menu_page('edit.php?post_type=osi-events');
+			remove_submenu_page( 'edit.php?post_type=osi-events', 'edit.php?post_type=osi-events' );
+			remove_submenu_page( 'edit.php?post_type=osi-events', 'post-new.php?post_type=osi-events' );
+			remove_submenu_page( 'edit.php?post_type=osi-events', 'edit-tags.php?taxonomy=category&post_type=osi-events' );
+		remove_menu_page('themes.php');
+			remove_submenu_page('themes.php', 'widgets.php');
+			remove_submenu_page('themes.php', 'nav-menus.php');
+			remove_submenu_page('themes.php', 'theme-editor.php');
+		remove_menu_page('plugins.php');
+			remove_submenu_page('plugins.php', 'plugin-install.php');
 			remove_submenu_page('plugins.php', 'plugin-editor.php');
-		//remove_menu_page('users.php');
-			//remove_submenu_page('users.php', 'user-new.php');
-			//remove_submenu_page('users.php', 'profile.php');
-		// remove_menu_page('tools.php');
-		// 	remove_submenu_page('tools.php', 'import.php');
-		// 	remove_submenu_page('tools.php', 'export.php');
-		//remove_menu_page('options-general.php');
-			//remove_submenu_page( 'options-general.php', 'options-writing.php' );
-			//remove_submenu_page( 'options-general.php', 'options-reading.php' );
-			//remove_submenu_page( 'options-general.php', 'options-discussion.php' );
-			//remove_submenu_page( 'options-general.php', 'options-media.php' );
-			//remove_submenu_page( 'options-general.php', 'options-permalink.php' );
+		remove_menu_page('users.php');
+			remove_submenu_page('users.php', 'user-new.php');
+			remove_submenu_page('users.php', 'profile.php');
+		remove_menu_page('tools.php');
+			remove_submenu_page('tools.php', 'import.php');
+			remove_submenu_page('tools.php', 'export.php');
+		remove_menu_page('options-general.php');
+			remove_submenu_page( 'options-general.php', 'options-writing.php' );
+			remove_submenu_page( 'options-general.php', 'options-reading.php' );
+			remove_submenu_page( 'options-general.php', 'options-discussion.php' );
+			remove_submenu_page( 'options-general.php', 'options-media.php' );
+			remove_submenu_page( 'options-general.php', 'options-permalink.php' );
+
+		/* Removes plugin menus */
+		remove_menu_page( 'admin.php?page=wpseo_dashboard' );
+		remove_menu_page( 'admin.php?page=powerpress/powerpressadmin_basic.php' );
+			// remove_submenu_page();
 	// }
 }
 add_action('admin_menu', 'remove_menus');
 
-
-/*	Add menus to the admin dashboard
- * 	
- *	In order for creativer users (graphics, video and web designers) to upload their work,
- * 	this menu is necessary. Users will be able to login to the site, upload files, and access
- *	their work using this method.
- *	
- *	The call for this page is located in the functions/functions.nav
- */
-// function register_file_upload_menu(){
-
-// 	/* 	Adds upload functions for all users, admins and creative 
-// 		users (graphics, video and web). */
-
-//     add_menu_page( 'File Upload', 'File Upload', 'manage_options', 'file-upload', 'creative_file_upload',plugins_url( 'myplugin/images/icon.png'), 6 ); 
-//     		add_submenu_page( 'file-upload', 'My Custom Submenu Page', 'My Custom Submenu Page', 'manage_options', 'my-custom-submenu-page', 'my_custom_submenu_page_callback' );
-// }
-// add_action( 'admin_menu', 'register_file_upload_menu' );
-
-
-/* Sample Custom Post Type
- *
- * In order to use this function, uncomment "add_action(...)" at the end.
- *
- * This code will add a new type of post to the site called "news".  It will appear
- * in the dashboard and have the features mentioned in the "supports" field.
- *
- * Full documentation for register_post_type() can be found at:
- * 		http://codex.wordpress.org/Function_Reference/register_post_type
- */
 
 function custom_post_types() {
 
@@ -116,73 +101,41 @@ function custom_post_types() {
 	 * For more information on capabilities, look at: http://codex.wordpress.org/Function_Reference/register_post_type
 	*/
 
-
-	// register_post_type('file-upload', array(
-	// 'labels' 			=> array(
-	// 	'name' 			=> 'File Upload',
-	// 	'singular_name' => 'File Upload'),
-	// 'public'			=> true,
-	// 'hierarchical'		=> false,
-	// 'supports' 			=> array('title', 'thumbnail', 'editor'),
-	// 'capability_type' 		=> 'upload',
-	// 'capabilities' 		=> array(
-
-	// // 	/* Capabilities that will be granted to creative users */
-	// 	'read'					=> 'read_uploads',
-	// 	'read_post' 			=> 'read_upload',
-	// 	'create_posts'			=> 'create_uploads',	
-	// 	'edit_posts' 			=> 'edit_uploads',	
-	// 	'publish_posts' 		=> 'publish_uploads',
- //        'edit_published_posts'  => "edit_published_uploads",
- //        'delete_published_posts'=> "delete_published_uploads",
-	// 	'delete_posts' 			=> 'delete_uploads',
-
-	// 	/* Capabilities that will be explicitly removed for creative users */
-	// 	'read_private_posts'	=> 'read_private_uploads',
-	// 	'edit_others_posts'	 	=> "edit_others_uploads",
-	//     'delete_private_posts'  => "delete_priate_uploads",
- //        'delete_others_posts'   => "delete_others_uploads",
- //        'edit_private_posts'    => "edit_private_uploads",
-	// 	),
-	// 'taxonomies' 		=> array('category'),
-	// 'has_archive' 		=> false,
-	// ));
-
-	
-	register_post_type('portfolio', array(
+	register_post_type('file_upload', array(
 	'labels' => array(
-		'name' => 'Portfolio',
-		'singular_name' => 'Piece'),
+		'name' => 'Uploads',
+		'singular_name' => 'Upload'),
 	'public' => true,
 	'hierarchical' => false,
 	'supports' => array('title', 'thumbnail'),
+	'capability_type' 		=> 'upload',
+	'capabilities' 		=> array(
+	
+		/* Capabilities that will be granted to creative users */
+		'read'					=> 'cr_read',
+		'read_post' 			=> 'cr_read_post',
+		'create_posts'			=> 'cr_create_posts',	
+		'edit_posts' 			=> 'cr_edit_posts',	
+		'publish_posts' 		=> 'cr_publish_posts',
+ 		'edit_published_posts'  => 'cr_edit_published_posts',
+ 	 	'delete_published_posts'=> 'cr_delete_published_posts',
+		'delete_posts' 			=> 'cr_delete_posts',
+
+		/* Capabilities that will be explicitly removed for creative users */
+		'read_private_posts'	=> 'cr_read_private_posts',
+		'edit_others_posts'	 	=> 'cr_edit_others_posts',
+		'delete_private_posts'  => 'cr_delete_private_posts',
+	 	'delete_others_posts'   => 'cr_delete_others_posts',
+	 	'edit_private_posts'    => 'cr_edit_private_posts',
+	 	'moderate_comments'		=> 'cr_moderate_comments',
+		),
+
 	'taxonomies' => array('category'),
 	'has_archive' => false
 	));
 }
 add_action('init', 'custom_post_types');
 
-
-/**
- *
- 
-function register_cpt_gallery() {
-$labels = array( 
-    'name' => _x( 'File Uploads', 'File Uploads' ),
-    'singular_name' => _x( 'Gallery', 'gallery' ),
-    'add_new' => _x( 'Add New', 'gallery' ),
-    'add_new_item' => _x( 'Add New Gallery', 'gallery' ),
-    'edit_item' => _x( 'Edit Gallery', 'gallery' ),
-    'new_item' => _x( 'New Gallery', 'gallery' ),
-    'view_item' => _x( 'View Gallery', 'gallery' ),
-    'search_items' => _x( 'Search Galleries', 'gallery' ),
-    'not_found' => _x( 'No galleries found', 'gallery' ),
-    'not_found_in_trash' => _x( 'No galleries found in Trash', 'gallery' ),
-    'parent_item_colon' => _x( 'Parent Gallery:', 'gallery' ),
-    'menu_name' => _x( 'Galleries', 'gallery' ),
-);
-add_action( 'init', 'register_cpt_gallery' );
-*/
 
 /* Change dashboard icons for the custom post types.
  *
@@ -203,19 +156,39 @@ function cpt_icons() {
 			background-position: 6px 7px!important;
 		}
 	</style>
-	<?php
+<?php
 }
 //add_action('admin_head', 'cpt_icons');
+
+
+function format_user_display_name_on_login( $username ) {
+    $user = get_user_by( 'login', $username );
+
+    $first_name = get_user_meta( $user->ID, 'first_name', true );
+    $last_name = get_user_meta( $user->ID, 'last_name', true );
+
+    $full_name = trim( $first_name . ' ' . $last_name );
+
+    if ( ! empty( $full_name ) && ( $user->data->display_name != $full_name ) ) {
+        $userdata = array(
+            'ID' => $user->ID,
+            'display_name' => $full_name,
+        );
+
+        wp_update_user( $userdata );
+    }
+}
+add_action( 'wp_login', 'format_user_display_name_on_login' );
 
 
 /* To include other collections of functions, include_once() the relevant files here. */
 
 include_once("functions/functions-nav.php");
-include_once("functions/functions-creative-team.php");
-include_once("functions/functions-portfolio.php");
+// include_once("functions/functions-creative-team.php");
+include_once("functions/functions-file-upload.php");
 include_once("functions/functions-user-profile.php");
 include_once("functions/functions-user-roles.php");
-include_once("functions/functions-admin-posts.php");
+// include_once("functions/functions-admin-posts.php");
 
 
 function get_avatar_url($author_id, $size){

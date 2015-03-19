@@ -8,10 +8,10 @@
 
 $result = add_role( 'creative_member', __( 'Creative' ), array(
 
-		//'read' => true,
-		//'create_posts' => true,
-		//'edit_posts' => true,
-		//'delete_posts' => true,
+		// 'read' => true,
+		// 'create_posts' => true,
+		// 'edit_posts' => true,
+		// 'delete_posts' => true,
 		// 'publish_posts' => true,
 		// 'delete_published_posts' => true,
 		// 'edit_published_posts' => true,
@@ -45,13 +45,32 @@ register_activation_hook( __FILE__, 'add_roles' );
  */
 function add_creative_capabilities() {
 
-	/* Get the appropriate role */
-    $role = get_role( 'creative_member' );
+    global $wp_roles;
 
-    // This only works, because it accesses the class instance.
-    // would allow the author to edit others' posts for current theme only
-    $role->add_cap( 'read_uploads' );
-    $role->add_cap( 'file_uploads' ); 
+    /* Add global role capabilities */
+    $wp_roles->add_cap( 'creative_member', 'read');
+    // // $wp_roles->add_cap( 'creative_member', 'create_posts');
+    // $wp_roles->add_cap( 'creative_member', 'edit_posts');
+    // $wp_roles->add_cap( 'creative_member', 'delete_posts');
+    // $wp_roles->add_cap( 'creative_member', 'publish_posts');
+    // $wp_roles->add_cap( 'creative_member', 'delete_published_posts');
+    // $wp_roles->add_cap( 'creative_member', 'upload_files');
+    // $wp_roles->remove_cap( 'creative_member', 'read');
+
+    /* Add post-related role capabilities */
+    // $wp_roles->add_cap( 'creative_member', 'cr_read');
+    // $wp_roles->add_cap( 'creative_member', 'cr_create_posts');
+    // $wp_roles->add_cap( 'creative_member', 'cr_edit_posts');
+    // $wp_roles->add_cap( 'creative_member', 'cr_publish_posts');
+    // $wp_roles->add_cap( 'creative_member', 'cr_edit_published_posts');
+    // $wp_roles->add_cap( 'creative_member', 'cr_delete_published_posts');
+    // $wp_roles->add_cap( 'creative_member', 'cr_delete_posts');
+		// /* Capabilities that will be explicitly removed for creative users */
+		// 'read_private_posts'	=> 'cr_read_private_posts',
+		// 'edit_others_posts'	 	=> 'cr_edit_others_posts',
+		// 'delete_private_posts'  => 'cr_delete_private_posts',
+	 // 	'delete_others_posts'   => 'cr_delete_others_posts',
+	 // 	'edit_private_posts'    => 'cr_edit_private_posts',
 
 }
 add_action( 'admin_init', 'add_creative_capabilities');
