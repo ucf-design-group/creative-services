@@ -6,12 +6,37 @@
  * For more unformation on user roles/capabilities, view http://codex.wordpress.org/Function_Reference/add_role
  */
 
-$result = add_role( 'creative_member', __( 'Creative' ), array(
+$result = add_role(
+	'creative_member', 
+	__( 'Creative' ), 
+	array(
+
+		// 'cr_publish' => true,
+		'cr_read'					=> true,
+		'cr_read_post'				=> true,
+		'cr_create_posts'			=> true,	
+		'cr_edit_posts'				=> true,
+		'cr_publish_posts'			=> true,
+ 	 	'cr_edit_published_posts' 	=> true,
+ 	  	'cr_delete_published_posts'	=> true,
+		'cr_delete_posts'			=> true,
+
+		/* Capabilities that will be explicitly removed for creative users */
+		'cr_read_private_posts'		=> false,
+		'cr_edit_others_posts'		=> false,
+		'cr_delete_private_posts'	=> false,
+	 	'cr_delete_others_posts'	=> false,
+	 	'cr_edit_private_posts'		=> false,
+	 	'cr_moderate_comments'		=> false,
 
 		// 'read' => true,
+		// 'cr_read' => true,
 		// 'create_posts' => true,
 		// 'edit_posts' => true,
 		// 'delete_posts' => true,
+		// 'cr_create_posts' => true,
+		// 'cr_edit_posts' => true,
+		// 'cr_delete_posts' => true,
 		// 'publish_posts' => true,
 		// 'delete_published_posts' => true,
 		// 'edit_published_posts' => true,
@@ -45,14 +70,16 @@ register_activation_hook( __FILE__, 'add_roles' );
  */
 function add_creative_capabilities() {
 
-    global $wp_roles;
+	/* Gets the WordPress roles global variable */
+	// GLOBAL $wp_roles;
 
     /* Add global role capabilities */
-    $wp_roles->add_cap( 'creative_member', 'read');
-    // // $wp_roles->add_cap( 'creative_member', 'create_posts');
-    // $wp_roles->add_cap( 'creative_member', 'edit_posts');
-    // $wp_roles->add_cap( 'creative_member', 'delete_posts');
+    // $wp_roles->add_cap( 'creative_member', 'read');
+    // $wp_roles->add_cap( 'creative_member', 'create_posts');
+    // $wp_roles->add_cap( 'creative_member', 'cr_read');
+    // $wp_roles->add_cap( 'creative_member', 'cr_create_posts');
     // $wp_roles->add_cap( 'creative_member', 'publish_posts');
+    // $wp_roles->add_cap( 'creative_member', 'cr_publish_posts');
     // $wp_roles->add_cap( 'creative_member', 'delete_published_posts');
     // $wp_roles->add_cap( 'creative_member', 'upload_files');
     // $wp_roles->remove_cap( 'creative_member', 'read');

@@ -28,33 +28,27 @@ function remove_menus() {
 
 	/* Pages removed for all users, including administrators. */
 
-	// remove_menu_page('edit.php');
-	// 	remove_submenu_page('edit.php', 'post-new.php');
-	// 	remove_submenu_page('edit.php', 'edit-tags.php?taxonomy=category');
-	// 	remove_submenu_page('edit.php', 'edit-tags.php?taxonomy=post_tag');
-	// remove_menu_page('upload.php');
-		// remove_submenu_page('upload.php', 'media-new.php');
-	// remove_menu_page('link-manager.php');
-	// 	remove_submenu_page('link-manager.php', 'link-add.php');
-	// 	remove_submenu_page('link-manager.php', 'edit-tags.php?taxonomy=link_category');
-	// remove_menu_page('edit-comments.php');
+	remove_menu_page( 'edit.php' );
+		remove_submenu_page( 'edit.php', 'post-new.php' );
+		remove_submenu_page( 'edit.php', 'edit-tags.php?taxonomy=category' );
+		remove_submenu_page( 'edit.php', 'edit-tags.php?taxonomy=post_tag' );
+	remove_menu_page('upload.php');
+		remove_submenu_page('upload.php', 'media-new.php');
+	remove_menu_page('link-manager.php');
+		remove_submenu_page('link-manager.php', 'link-add.php');
+		remove_submenu_page('link-manager.php', 'edit-tags.php?taxonomy=link_category');	
+	remove_menu_page('edit.php?post_type=osi-events');
+		remove_submenu_page( 'edit.php?post_type=osi-events', 'edit.php?post_type=osi-events' );
+		remove_submenu_page( 'edit.php?post_type=osi-events', 'post-new.php?post_type=osi-events' );
+		remove_submenu_page( 'edit.php?post_type=osi-events', 'edit-tags.php?taxonomy=category&post_type=osi-events' );
+	remove_menu_page('edit-comments.php');
+		
+	/* Pages removed for all users that aren't administrators (we only show them the uploads page) */
 
-	$user = wp_get_current_user();
-	// if ($user->wp_capabilities['Administrator'] != 1) {
+	if( ! is_admin() ){
 
-			remove_submenu_page('index.php', 'update-core.php');
-		remove_menu_page( 'edit.php' );
-			remove_submenu_page( 'edit.php', 'post-new.php' );
-			remove_submenu_page( 'edit.php', 'edit-tags.php?taxonomy=category' );
-			remove_submenu_page( 'edit.php', 'edit-tags.php?taxonomy=post_tag' );
-		remove_menu_page( 'upload.php' );
 		remove_menu_page('edit.php?post_type=page');
 			remove_submenu_page('edit.php', 'post-new.php?post_type=page');
-		remove_menu_page('edit-comments.php');
-		remove_menu_page('edit.php?post_type=osi-events');
-			remove_submenu_page( 'edit.php?post_type=osi-events', 'edit.php?post_type=osi-events' );
-			remove_submenu_page( 'edit.php?post_type=osi-events', 'post-new.php?post_type=osi-events' );
-			remove_submenu_page( 'edit.php?post_type=osi-events', 'edit-tags.php?taxonomy=category&post_type=osi-events' );
 		remove_menu_page('themes.php');
 			remove_submenu_page('themes.php', 'widgets.php');
 			remove_submenu_page('themes.php', 'nav-menus.php');
@@ -79,10 +73,26 @@ function remove_menus() {
 		remove_menu_page( 'admin.php?page=wpseo_dashboard' );
 		remove_menu_page( 'admin.php?page=powerpress/powerpressadmin_basic.php' );
 			// remove_submenu_page();
-	// }
+	}
 }
 add_action('admin_menu', 'remove_menus');
 
+/* Removes links from the wpadminbar */
+function remove_admin_bar_links() {
+	
+	/* Gets the global variable for the wpadminbar */
+	global $wp_admin_bar;
+
+	/**
+	 * Removes buttons deemed unnecessary for the creative members. These buttons
+	 * have extra functionality that creative members would never use and may distract
+	 * them from the reason they're there: to upload works.
+	 */
+	// $wp_admin_bar->remove_menu('new-content');
+	$wp_admin_bar->remove_menu('my-sites');
+	$wp_admin_bar->remove_menu('wp-logo');
+}
+add_action( 'wp_before_admin_bar_render', 'remove_admin_bar_links' );
 
 function custom_post_types() {
 
@@ -102,23 +112,29 @@ function custom_post_types() {
 	*/
 
 	register_post_type('file_upload', array(
-	'labels' => array(
-		'name' => 'Uploads',
-		'singular_name' => 'Upload'),
-	'public' => true,
-	'hierarchical' => false,
-	'supports' => array('title', 'thumbnail'),
-	'capability_type' 		=> 'upload',
+	'labels' 			=> array(
+		'name' 				=> 'Uploads',
+		'singular_name' 	=> 'Upload'),
+	'public' 			=> true,
+	'hierarchical' 		=> false,
+	'supports' 			=> array('title', 'thumbnail'),
+	'capability_type'	=> 'file_upload',
 	'capabilities' 		=> array(
 	
+		/**
+		 * These are capabilities that will be litigated to creative users. This section
+		 * does not grant them these permissions, but instead creates permission variables
+		 * for the post type so that they can be granted to users. 
+		 */
+
 		/* Capabilities that will be granted to creative users */
 		'read'					=> 'cr_read',
 		'read_post' 			=> 'cr_read_post',
 		'create_posts'			=> 'cr_create_posts',	
 		'edit_posts' 			=> 'cr_edit_posts',	
 		'publish_posts' 		=> 'cr_publish_posts',
- 		'edit_published_posts'  => 'cr_edit_published_posts',
- 	 	'delete_published_posts'=> 'cr_delete_published_posts',
+ 	 	'edit_published_posts'  => 'cr_edit_published_posts',
+ 	  	'delete_published_posts'=> 'cr_delete_published_posts',
 		'delete_posts' 			=> 'cr_delete_posts',
 
 		/* Capabilities that will be explicitly removed for creative users */
@@ -133,6 +149,7 @@ function custom_post_types() {
 	'taxonomies' => array('category'),
 	'has_archive' => false
 	));
+
 }
 add_action('init', 'custom_post_types');
 
