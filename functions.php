@@ -45,7 +45,7 @@ function remove_menus() {
 		
 	/* Pages removed for all users that aren't administrators (we only show them the uploads page) */
 
-	if( ! is_admin() ){
+	if( !is_an_admin() ){
 
 		remove_menu_page('edit.php?post_type=page');
 			remove_submenu_page('edit.php', 'post-new.php?post_type=page');
@@ -59,7 +59,7 @@ function remove_menus() {
 		remove_menu_page('users.php');
 			remove_submenu_page('users.php', 'user-new.php');
 			remove_submenu_page('users.php', 'profile.php');
-		remove_menu_page('tools.php');
+  		remove_menu_page( 'tools.php' );                  //Tools
 			remove_submenu_page('tools.php', 'import.php');
 			remove_submenu_page('tools.php', 'export.php');
 		remove_menu_page('options-general.php');
@@ -88,11 +88,41 @@ function remove_admin_bar_links() {
 	 * have extra functionality that creative members would never use and may distract
 	 * them from the reason they're there: to upload works.
 	 */
-	// $wp_admin_bar->remove_menu('new-content');
-	$wp_admin_bar->remove_menu('my-sites');
-	$wp_admin_bar->remove_menu('wp-logo');
+	if( !is_an_admin() ) {
+		$wp_admin_bar->remove_menu('new-content');
+		$wp_admin_bar->remove_menu('my-sites');
+		$wp_admin_bar->remove_menu('wp-logo');
+		$wp_admin_bar->remove_menu('comments');
+		$wp_admin_bar->remove_menu('wpseo-menu');
+	}
 }
-add_action( 'wp_before_admin_bar_render', 'remove_admin_bar_links' );
+add_action( 'wp_before_admin_bar_render', 'remove_admin_bar_links' ); //wp_before_admin_bar_render
+
+
+
+/**
+ * [add_admin_bar_links description]
+ *
+ * Adds links for creative members so that their work is easier to access and they
+ * can easily uplaod files wthough having to navigate the admin panel unnecessarily.
+ */
+function add_admin_bar_links() {
+	global $wp_admin_bar;
+
+	/* Gets the menu 'site-name' */
+	$menu_id = 'site-name'; //
+
+	/* Appends a new link to the site name, 'new-upload' */
+	$wp_admin_bar->add_menu( array(
+		'parent' => $menu_id, // The menu that this will attach to (in this case, site name)
+		'title' => __('New Upload'), // Hover title of new link
+		'id' => 'new-upload', // HTML id attribute of generated link
+		'href' => 'http://osi.ucf.edu/creativeservices/wp-admin/post-new.php?post_type=file_upload') // Links to new upload post
+	);
+}
+add_action('admin_bar_menu', 'add_admin_bar_links', 100);
+
+
 
 function custom_post_types() {
 
@@ -118,32 +148,33 @@ function custom_post_types() {
 	'public' 			=> true,
 	'hierarchical' 		=> false,
 	'supports' 			=> array('title', 'thumbnail'),
-	'capability_type'	=> 'file_upload',
-	'capabilities' 		=> array(
-	
+	'capability_type' => 'post',
+	'capabilities' => array(
+
 		/**
 		 * These are capabilities that will be litigated to creative users. This section
-		 * does not grant them these permissions, but instead creates permission variables
-		 * for the post type so that they can be granted to users. 
+		 * does not grant them these permissions, but instead ports the capabilities
+		 * from the the post type `post` so that it will act the same way as a regular
+		 * post type and permissions can be distributed to different users. 
 		 */
 
 		/* Capabilities that will be granted to creative users */
-		'read'					=> 'cr_read',
-		'read_post' 			=> 'cr_read_post',
-		'create_posts'			=> 'cr_create_posts',	
-		'edit_posts' 			=> 'cr_edit_posts',	
+        'read'					=> 'cr_read',
+		'read_posts' 			=> 'cr_read_posts',
+		'create_post'			=> 'cr_create_posts',	
+		'edit_post' 			=> 'cr_edit_posts',	
 		'publish_posts' 		=> 'cr_publish_posts',
- 	 	'edit_published_posts'  => 'cr_edit_published_posts',
- 	  	'delete_published_posts'=> 'cr_delete_published_posts',
+	 	'edit_published_post'	=> 'cr_edit_published_posts',
+ 		'delete_published_post'	=> 'cr_delete_published_posts',
 		'delete_posts' 			=> 'cr_delete_posts',
 
 		/* Capabilities that will be explicitly removed for creative users */
 		'read_private_posts'	=> 'cr_read_private_posts',
 		'edit_others_posts'	 	=> 'cr_edit_others_posts',
 		'delete_private_posts'  => 'cr_delete_private_posts',
-	 	'delete_others_posts'   => 'cr_delete_others_posts',
-	 	'edit_private_posts'    => 'cr_edit_private_posts',
-	 	'moderate_comments'		=> 'cr_moderate_comments',
+		'delete_others_posts'   => 'cr_delete_others_posts',
+		'edit_private_posts'    => 'cr_edit_private_posts',
+		'moderate_comments'		=> 'cr_moderate_comments',
 		),
 
 	'taxonomies' => array('category'),
@@ -161,7 +192,6 @@ add_action('init', 'custom_post_types');
  * This CSS uses an icon from the cpt_icons collection for a custom post type
  * in the dashboard.  Place the icon in the resources directory.
  */
-
 function cpt_icons() {
 
 	?>
@@ -198,6 +228,23 @@ function format_user_display_name_on_login( $username ) {
 add_action( 'wp_login', 'format_user_display_name_on_login' );
 
 
+function get_avatar_url($author_id, $size){
+    $get_avatar = get_avatar( $author_id, $size );
+    preg_match("/src='(.*?)'/i", $get_avatar, $matches);
+    return ( $matches[1] );
+}
+
+
+/**
+ * Quick function to check if a user is an administrator. Since there is not a built-in
+ * functions for this, we can check the capabilities of the user to determine role. 
+ */
+function is_an_admin(){
+	if (current_user_can( 'manage_options' ))
+		return true;
+	return false;
+}
+
 /* To include other collections of functions, include_once() the relevant files here. */
 
 include_once("functions/functions-nav.php");
@@ -207,10 +254,4 @@ include_once("functions/functions-user-profile.php");
 include_once("functions/functions-user-roles.php");
 // include_once("functions/functions-admin-posts.php");
 
-
-function get_avatar_url($author_id, $size){
-    $get_avatar = get_avatar( $author_id, $size );
-    preg_match("/src='(.*?)'/i", $get_avatar, $matches);
-    return ( $matches[1] );
-}
 ?>

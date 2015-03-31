@@ -8,40 +8,48 @@ function file_upload_meta_setup() {
 add_action('load-post.php','file_upload_meta_setup');
 add_action('load-post-new.php','file_upload_meta_setup');
 
+
+/**
+ * To enable saving meta data alongside the post, we need to create a meta box
+ * otherwise WordPress will just ignore `file_upload_meta_save()` because there
+ * it will think that there is no meta information to save. In a sense, we are 
+ * tricking the CMS here (:
+ */
 function file_upload_meta_add() {
  
 	add_meta_box (
 	'file_upload_meta',
-	'File Upload Details', 
+	'How to upload your file', 
 	'file_upload_meta',
 	'file_upload',
 	'normal',
 	'default');
 }
 
+/**
+ * Even though we are not storing any custom variables that the user needs to input,
+ * we still need to reference the post and create the form to allow for meta information
+ * to be saved later in `file_upload_meta_save()`
+ */
 function file_upload_meta() {
-
 	global $post;
-	wp_nonce_field(basename( __FILE__ ), 'file-upload-form-nonce' );
+	wp_nonce_field(basename( __FILE__ ), 'file-upload-form-nonce' );?> 
 
-	$port_name = get_post_meta($post->ID, 'file-upload-form-name', true) ? get_post_meta($post->ID, 'file-upload-form-name', true) : '';
-
-	?>
-	<style type="text/css">#file-upload-form div{display:inline-block; padding:0 5px;} #file-upload-form-name, #file-upload-form-twitter, #file-upload-form-email, #file-upload-form-linkedin, #file-upload-form-instagram, #file-upload-form-behance, #file-upload-form-vimeo, #file-upload-form-git, #file-upload-form-personal{display: block; width:180px;}</style>
-	<div id="file-upload-form">
-		<div>
-			<label for="file-upload-form-name">Creator's Name:</label>
-			<input type="text" name="file-upload-form-name" id="file-upload-form-name" value="<?php echo $port_name; ?>" />
-		</div>
-	</div>
+	<div><p>Set your post as the featured image and all other information will be taken care of on the back-end</p></div>
 	<?php
 }
 
 
+/**
+ * Here, we save the user's information so we can parse for later use on the front-end when
+ * sorting and using Isotope. We store the mata information alongside the post here.
+ */
 function file_upload_meta_save() {
 
+	/* Variables */
 	global $post;
 	$post_id = $post->ID;
+	$date = new DateTime();
 
 	if (!isset($_POST['file-upload-form-nonce']) || !wp_verify_nonce($_POST['file-upload-form-nonce'], basename( __FILE__ ))) {
 		return $post->ID;
@@ -54,11 +62,9 @@ function file_upload_meta_save() {
 	}
 
 	$input = array();
-
-	$input['name'] = (isset($_POST['file-upload-form-name']) ? $_POST['file-upload-form-name'] : '');
-	$input['user-ID'] = get_current_user_id();
-
-	// $input['order'] = str_pad($input['order'], 3, "0", STR_PAD_LEFT);
+	$input['userID'] 	= wp_get_current_user()->ID; 
+	$input['username'] = wp_get_current_user()->display_name;
+	$input['timestamp'] = $date->format('U = Y-m-d H:i:s') . "\n";
 
 	foreach ($input as $field => $value) {
 
