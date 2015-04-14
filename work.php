@@ -22,7 +22,7 @@ get_header(); ?>
 
 						// Creates a list of all the portfolio works that have been uploaded by creative members.
 
-						$creativeLoop = new WP_QUERY(array('post_type' => 'portfolio', 'posts_per_page' => 12, 'orderby' => 'date', 'order' => 'DSC'));
+						$creativeLoop = new WP_QUERY(array('post_type' => array('portfolio', 'file_upload'), 'posts_per_page' => -1, 'orderby' => 'date', 'order' => 'DSC'));
 
 						//$creativeLoop = new WP_QUERY(array('post_type' => 'portfolio', 'posts_per_page' => -1, 'orderby' => 'rand', 'order' => 'DSC'));
 
@@ -35,6 +35,8 @@ get_header(); ?>
 							$image = get_the_post_thumbnail($post->ID, 'full');
 							//$image_url = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'full');
 							$name = get_post_meta($post->ID, 'portfolio-form-name', true);
+							//if ($name == null || strlem($name) == 0) 
+								//$name = get_the_author();
 							$linkedin = get_post_meta($post->ID, 'portfolio-form-linkedin', true);
 							$email = get_post_meta($post->ID, 'portfolio-form-email', true);
 							$twitter = get_post_meta($post->ID, 'portfolio-form-twitter', true);
@@ -110,18 +112,10 @@ get_header(); ?>
 <?php 				}
 ?>
 				</div>
-			
-				<!-- Div to contain the posts that will be added. -->
-				<div id="more"> Loading More Content </div>
-				<div id="no-more"> No More Content </div>
-				<div id="result" class="item">
-				</div>
-
-				<!-- end -->
 
 			</div>
 
-<script type="text/javascript" src="js/jquery-1.11.2.js">
+<!--<script type="text/javascript" src="js/jquery-1.11.2.js">
 
 	jQuery(document).ready(function(?) {
 	
@@ -159,5 +153,5 @@ get_header(); ?>
 	}
 
 	});
-</script>
+</script>-->
 <?php get_footer(); ?>
